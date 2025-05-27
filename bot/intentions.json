@@ -1,0 +1,31 @@
+{
+    "salutation": [
+      "bonjour", "salut", "coucou", "bonsoir", "yo", "hey", "bienvenue", "hello", "allo", "salutations"
+    ],
+    "remerciement": [
+      "merci", "super", "cool", "gentil", "sympa", "parfait", "génial", "top", "chouette", "nickel", "bravo", "félicitations"
+    ],
+    "commande": [
+      "commander", "acheter", "prix", "payer", "panier", "facture", "commande", "réserver", "réservation", "payer"
+    ],
+    "produit": [
+      "produit", "article", "chaussure", "robe", "tenue", "vêtement", "jean", "t-shirt", "bikini", "maillot",
+      "maillot de bain", "lunette", "lunette pharmaceutique", "chemise", "chapeau", "pantalon", "sac", "accessoire", "casquette", "baskets"
+    ],
+    "livraison": [
+      "livrer", "livraison", "colis", "expédition", "délai", "retard", "suivi", "transport", "réception", "recevoir"
+    ],
+    "retour": [
+      "retour", "rembourser", "échanger", "annuler", "réclamation", "retourner", "échange"
+    ],
+    "problème": [
+      "bug", "erreur", "problème", "souci", "incident", "blocage", "impossible", "dysfonctionnement", "ne fonctionne pas"
+    ],
+    "horaire": [
+      "horaire", "heure", "ouvert", "fermé", "fermeture", "disponibilité", "heures d’ouverture", "quand", "moment"
+    ],
+    "paiement": [
+      "paiement", "moyen", "carte", "mobile money", "paypal", "orange money", "visa", "espèces", "versement"
+    ]
+  }
+  
