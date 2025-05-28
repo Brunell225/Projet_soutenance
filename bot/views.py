@@ -6,6 +6,7 @@ from rest_framework import viewsets, permissions, generics
 from django.utils.timezone import now, timedelta
 from django.views.decorators.csrf import csrf_exempt
 import json
+from .whatsapp_api import send_message_to_whatsapp
 from django.http import HttpResponse
 from django.db.models import Count, Q
 from .serializers import BotResponseSerializer, BotMessageHistorySerializer, ProductSerializer
@@ -14,6 +15,7 @@ from .nlp_utils import detect_intention_spacy, extract_keywords
 from accounts.permissions import IsVendeur
 import requests
 import re
+from accounts.models import User
 
 
 VERIFY_TOKEN = 'molly_bot_verify' 
@@ -324,10 +326,8 @@ import json
 
 VERIFY_TOKEN = 'molly_bot_verify'
 
-@csrf_exempt
 def webhook_view(request):
     if request.method == 'GET':
-        # ✅ Vérification du webhook par Meta
         mode = request.GET.get('hub.mode')
         verify_token = request.GET.get('hub.verify_token')
         challenge = request.GET.get('hub.challenge')
@@ -337,11 +337,9 @@ def webhook_view(request):
         return HttpResponse("Token invalide ou mode incorrect", status=403)
 
     elif request.method == 'POST':
-        # ✅ Traitement des messages entrants
         data = json.loads(request.body.decode('utf-8'))
         print("📨 Nouveau message reçu :", json.dumps(data, indent=2))
 
-        # Analyse du contenu
         entry = data.get('entry', [])
         for ent in entry:
             changes = ent.get('changes', [])
@@ -349,12 +347,46 @@ def webhook_view(request):
                 value = change.get('value', {})
                 messages = value.get('messages', [])
                 metadata = value.get('metadata', {})
+
                 if messages:
                     msg = messages[0]
-                    from_number = msg.get('from')  # Numéro du client
-                    message_text = msg.get('text', {}).get('body', '')  # Message du client
+                    from_number = msg.get('from')
+                    message_text = msg.get('text', {}).get('body', '')
 
-                    # 🔽 TODO : Ici on pourra appeler AnalyseMessageView en interne si besoin
+                    # 🔍 Analyse NLP
+                    doc = detect_intention_spacy(message_text)
+                    intent = doc.cats if hasattr(doc, "cats") else {}
+                    print("🤖 Intentions détectées :", intent)
+
+                    # 🧠 Générer la réponse
+                    if intent:
+                        best_intent = max(intent, key=intent.get)
+                        confidence = intent[best_intent]
+
+                        if confidence > 0.6:
+                            response = f"Tu parles de : {best_intent} ! Je peux t’aider 👍🏽"
+                        else:
+                            response = "Je ne suis pas sûr d’avoir compris. Peux-tu reformuler ?"
+                    else:
+                        response = "Je n’ai pas compris ton message."
+
+                    # 🔁 Identifier le bon vendeur (par phone_number_id)
+                    vendeurs = User.objects.filter(
+                        is_business_account=True,
+                        whatsapp_api_token__isnull=False,
+                        phone_number_id__isnull=False
+                    )
+
+                    vendeur_trouvé = None
+                    for vendeur in vendeurs:
+                        if vendeur.phone_number_id == metadata.get("phone_number_id"):
+                            vendeur_trouvé = vendeur
+                            break
+
+                    if vendeur_trouvé:
+                        send_message_to_whatsapp(from_number, response, vendeur_trouvé)
+                    else:
+                        print("❌ Aucun vendeur correspondant à ce phone_number_id")
 
         return HttpResponse("EVENT_RECEIVED", status=200)
 
