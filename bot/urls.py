@@ -13,6 +13,7 @@ path('messages-history/', MessageHistoryListView.as_view(), name='messages_histo
 path('recommandation/', BotRecommendationAPIView.as_view(), name='bot_recommendation'),
 path('toggle-bot/', toggle_bot, name='toggle_bot'),
 path('stats/', BotStatsAPIView.as_view(), name='bot_stats'),
+path('webhook/', webhook_view, name='webhook'),
 path('', include(router.urls)),
 
 ]

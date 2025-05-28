@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view 
 from rest_framework import viewsets, permissions, generics
 from django.utils.timezone import now, timedelta
+from django.views.decorators.csrf import csrf_exempt
+import json
+from django.http import HttpResponse
 from django.db.models import Count, Q
 from .serializers import BotResponseSerializer, BotMessageHistorySerializer, ProductSerializer
 from .models import BotResponse, BotMessageHistory, BotSession, Product
@@ -12,6 +15,8 @@ from accounts.permissions import IsVendeur
 import requests
 import re
 
+
+VERIFY_TOKEN = 'molly_bot_verify' 
 
 # ✅ ✅ Envoi d’un template (à configurer côté Meta)
 class SendBotMessageAPIView(APIView):
@@ -311,3 +316,38 @@ class ProductViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+
+@csrf_exempt
+def webhook_view(request):
+    if request.method == 'GET':
+        # ✅ Vérification par Meta pour activer le webhook
+        verify_token = request.GET.get('hub.verify_token')
+        challenge = request.GET.get('hub.challenge')
+        if verify_token == VERIFY_TOKEN:
+            return HttpResponse(challenge)
+        return HttpResponse("Token invalide", status=403)
+
+    elif request.method == 'POST':
+        # ✅ Traitement des messages entrants
+        data = json.loads(request.body.decode('utf-8'))
+        print("📨 Nouveau message reçu :", json.dumps(data, indent=2))
+
+        # Vérifie la structure pour trouver le message
+        entry = data.get('entry', [])
+        for ent in entry:
+            changes = ent.get('changes', [])
+            for change in changes:
+                value = change.get('value', {})
+                messages = value.get('messages', [])
+                metadata = value.get('metadata', {})
+                if messages:
+                    msg = messages[0]
+                    from_number = msg.get('from')  # numéro client
+                    message_text = msg.get('text', {}).get('body', '')  # texte du client
+
+                    # 🔽 TODO : ici on déclenchera le bot plus tard avec from_number + message_text
+
+        return HttpResponse("EVENT_RECEIVED", status=200)
+
+    return HttpResponse("Méthode non autorisée", status=405)

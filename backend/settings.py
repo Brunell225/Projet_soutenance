@@ -86,11 +86,11 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'whatsapp_saas',
-        'USER': 'postgres',
-        'PASSWORD': 'Molly225',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get("DB_NAME", "nom_local"),
+        'USER': os.environ.get("DB_USER", "utilisateur_local"),
+        'PASSWORD': os.environ.get("DB_PASSWORD", "mot_de_passe_local"),
+        'HOST': os.environ.get("DB_HOST", "localhost"),
+        'PORT': os.environ.get("DB_PORT", "5432"),
     }
 }
 
