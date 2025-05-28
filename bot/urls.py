@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ProductViewSet, SendBotMessageAPIView, AnalyseMessageView, BotResponseViewSet, MessageHistoryListView, toggle_bot, BotStatsAPIView, BotRecommendationAPIView
+from .views import ProductViewSet, SendBotMessageAPIView, AnalyseMessageView, BotResponseViewSet, MessageHistoryListView, toggle_bot, BotStatsAPIView, BotRecommendationAPIView, webhook_view
 
 router = DefaultRouter()
 router.register(r'intentions', BotResponseViewSet, basename='botresponse')
