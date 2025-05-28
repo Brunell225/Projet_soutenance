@@ -318,22 +318,30 @@ class ProductViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
 
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+import json
+
+VERIFY_TOKEN = 'molly_bot_verify'
+
 @csrf_exempt
 def webhook_view(request):
     if request.method == 'GET':
-        # ✅ Vérification par Meta pour activer le webhook
+        # ✅ Vérification du webhook par Meta
+        mode = request.GET.get('hub.mode')
         verify_token = request.GET.get('hub.verify_token')
         challenge = request.GET.get('hub.challenge')
-        if verify_token == VERIFY_TOKEN:
+
+        if mode == 'subscribe' and verify_token == VERIFY_TOKEN:
             return HttpResponse(challenge)
-        return HttpResponse("Token invalide", status=403)
+        return HttpResponse("Token invalide ou mode incorrect", status=403)
 
     elif request.method == 'POST':
         # ✅ Traitement des messages entrants
         data = json.loads(request.body.decode('utf-8'))
         print("📨 Nouveau message reçu :", json.dumps(data, indent=2))
 
-        # Vérifie la structure pour trouver le message
+        # Analyse du contenu
         entry = data.get('entry', [])
         for ent in entry:
             changes = ent.get('changes', [])
@@ -343,10 +351,10 @@ def webhook_view(request):
                 metadata = value.get('metadata', {})
                 if messages:
                     msg = messages[0]
-                    from_number = msg.get('from')  # numéro client
-                    message_text = msg.get('text', {}).get('body', '')  # texte du client
+                    from_number = msg.get('from')  # Numéro du client
+                    message_text = msg.get('text', {}).get('body', '')  # Message du client
 
-                    # 🔽 TODO : ici on déclenchera le bot plus tard avec from_number + message_text
+                    # 🔽 TODO : Ici on pourra appeler AnalyseMessageView en interne si besoin
 
         return HttpResponse("EVENT_RECEIVED", status=200)
 
