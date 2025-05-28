@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-59xg396)ocz*e_sr*1133)wgdq-u_kr0n&wmc5f1y!(*^+-tbc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1","192.168.0.137", "192.168.2.114" ]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1","192.168.0.137", "192.168.2.114","saas-whatsapp-backend-production.up.railway.app" ]
 
 
 # Application definition
