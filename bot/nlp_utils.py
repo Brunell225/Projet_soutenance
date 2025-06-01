@@ -4,15 +4,13 @@ import os
 # === 1. Détection avec le modèle NLP entraîné ===
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_DIR = os.path.join(PROJECT_ROOT, "bot_nlp_model")
+MODEL_DIR = os.path.join(PROJECT_ROOT, "bot_nlp_model", "model-best")  # ← 👈 important
 
-# Chargement du modèle entraîné
 nlp_intent = spacy.load(MODEL_DIR)
 
 def detect_intention_spacy(message):
     doc = nlp_intent(message)
     return doc
-
 
 # === 2. Extraction de mots-clés produits ===
 
@@ -45,7 +43,6 @@ def extract_keywords(text):
             keywords.append(p)
 
     return list(set(keywords))
-
 
 # === 3. Alias clair pour le backend ===
 

@@ -1,0 +1,100 @@
+{"text": "Bonjour", "cats": {"salutation": 1.0}}
+{"text": "Salut", "cats": {"salutation": 1.0}}
+{"text": "Bonsoir", "cats": {"salutation": 1.0}}
+{"text": "Coucou", "cats": {"salutation": 1.0}}
+{"text": "Allo", "cats": {"salutation": 1.0}}
+{"text": "Yo", "cats": {"salutation": 1.0}}
+{"text": "Hey", "cats": {"salutation": 1.0}}
+{"text": "Bienvenue", "cats": {"salutation": 1.0}}
+{"text": "Hello", "cats": {"salutation": 1.0}}
+{"text": "Je vous salue", "cats": {"salutation": 1.0}}
+{"text": "Merci beaucoup", "cats": {"remerciement": 1.0}}
+{"text": "Super service", "cats": {"remerciement": 1.0}}
+{"text": "Vous êtes au top", "cats": {"remerciement": 1.0}}
+{"text": "Merci infiniment", "cats": {"remerciement": 1.0}}
+{"text": "C’est très gentil", "cats": {"remerciement": 1.0}}
+{"text": "Merci pour votre aide", "cats": {"remerciement": 1.0}}
+{"text": "Merci pour la livraison rapide", "cats": {"remerciement": 1.0}}
+{"text": "Génial, merci", "cats": {"remerciement": 1.0}}
+{"text": "Bravo à vous", "cats": {"remerciement": 1.0}}
+{"text": "Merci bien", "cats": {"remerciement": 1.0}}
+{"text": "Je veux commander une robe", "cats": {"commande": 1.0}}
+{"text": "Je passe commande", "cats": {"commande": 1.0}}
+{"text": "Je veux réserver cet article", "cats": {"commande": 1.0}}
+{"text": "Comment commander un maillot ?", "cats": {"commande": 1.0}}
+{"text": "Je passe une commande pour un bracelet", "cats": {"commande": 1.0}}
+{"text": "Je veux commander deux plats", "cats": {"commande": 1.0}}
+{"text": "Je veux prendre un jogging homme", "cats": {"commande": 1.0}}
+{"text": "Je veux ce service de plomberie", "cats": {"commande": 1.0}}
+{"text": "Je vais acheter un chapeau", "cats": {"commande": 1.0}}
+{"text": "Je réserve une paire de talons", "cats": {"commande": 1.0}}
+{"text": "Vous avez des tee-shirts homme ?", "cats": {"produit": 1.0}}
+{"text": "Quels bikinis sont disponibles ?", "cats": {"produit": 1.0}}
+{"text": "Montrez-moi les lunettes pour femme", "cats": {"produit": 1.0}}
+{"text": "Vous avez des sandales homme ?", "cats": {"produit": 1.0}}
+{"text": "Quels types de jupes avez-vous ?", "cats": {"produit": 1.0}}
+{"text": "Vous avez des maillots 2 pièces ?", "cats": {"produit": 1.0}}
+{"text": "Est-ce que vous proposez des jeans ?", "cats": {"produit": 1.0}}
+{"text": "Quels services proposez-vous ?", "cats": {"produit": 1.0}}
+{"text": "Y a-t-il des bracelets en stock ?", "cats": {"produit": 1.0}}
+{"text": "Vous vendez des plats locaux ?", "cats": {"produit": 1.0}}
+{"text": "Montrez-moi les nouveaux maillots là", "cats": {"produit": 1.0}}
+{"text": "Je cherche pantalon en jeans pour go", "cats": {"produit": 1.0}}
+{"text": "Donnez-moi les trucs pour femme là", "cats": {"produit": 1.0}}
+{"text": "Faut me montrer vos lunettes en promo", "cats": {"produit": 1.0}}
+{"text": "Jupe taille haute là c’est combien ?", "cats": {"produit": 1.0}}
+{"text": "Y a maillot 3 pièces comme les stars ?", "cats": {"produit": 1.0}}
+{"text": "Vous avez bracelet pour mettre à fête ?", "cats": {"produit": 1.0}}
+{"text": "Je veux jogging bien propre", "cats": {"produit": 1.0}}
+{"text": "Vous avez les culottes qui tiennent bien là ?", "cats": {"produit": 1.0}}
+{"text": "Faut me donner vos articles femmes", "cats": {"produit": 1.0}}
+{"text": "Est-ce que vous livrez ?", "cats": {"livraison": 1.0}}
+{"text": "Quel est le délai de livraison ?", "cats": {"livraison": 1.0}}
+{"text": "Livrez-vous à domicile ?", "cats": {"livraison": 1.0}}
+{"text": "La livraison est gratuite ?", "cats": {"livraison": 1.0}}
+{"text": "Vous pouvez livrer les maillots demain ?", "cats": {"livraison": 1.0}}
+{"text": "Je veux recevoir mon jogging rapidement", "cats": {"livraison": 1.0}}
+{"text": "Livrez-vous les plats chauds ?", "cats": {"livraison": 1.0}}
+{"text": "Quand arrive mon colis ?", "cats": {"livraison": 1.0}}
+{"text": "Puis-je payer à la livraison ?", "cats": {"livraison": 1.0}}
+{"text": "Livrez-vous le dimanche ?", "cats": {"livraison": 1.0}}
+{"text": "Comment payer ?", "cats": {"paiement": 1.0}}
+{"text": "Quels moyens de paiement acceptez-vous ?", "cats": {"paiement": 1.0}}
+{"text": "Puis-je payer par Orange Money ?", "cats": {"paiement": 1.0}}
+{"text": "Je paie par carte ?", "cats": {"paiement": 1.0}}
+{"text": "Est-ce que le paiement est sécurisé ?", "cats": {"paiement": 1.0}}
+{"text": "Je veux payer en espèces", "cats": {"paiement": 1.0}}
+{"text": "Puis-je payer en deux tranches ?", "cats": {"paiement": 1.0}}
+{"text": "Le paiement est-il à l’avance ?", "cats": {"paiement": 1.0}}
+{"text": "Acceptez-vous MTN Mobile Money ?", "cats": {"paiement": 1.0}}
+{"text": "Je veux un reçu après paiement", "cats": {"paiement": 1.0}}
+{"text": "Je veux retourner ce bikini", "cats": {"retour": 1.0}}
+{"text": "Puis-je échanger cette paire de sandales ?", "cats": {"retour": 1.0}}
+{"text": "Je souhaite un remboursement", "cats": {"retour": 1.0}}
+{"text": "Je veux annuler la commande", "cats": {"retour": 1.0}}
+{"text": "Je me suis trompé de taille", "cats": {"retour": 1.0}}
+{"text": "Je n’ai pas reçu le bon produit", "cats": {"retour": 1.0}}
+{"text": "Est-ce que je peux changer la commande ?", "cats": {"retour": 1.0}}
+{"text": "Je ne suis pas satisfait du plat livré", "cats": {"retour": 1.0}}
+{"text": "J’ai changé d’avis", "cats": {"retour": 1.0}}
+{"text": "Je veux rendre ce bracelet", "cats": {"retour": 1.0}}
+{"text": "Le site ne fonctionne pas", "cats": {"problème": 1.0}}
+{"text": "Je n’ai pas reçu ma commande", "cats": {"problème": 1.0}}
+{"text": "Il y a une erreur dans le prix", "cats": {"problème": 1.0}}
+{"text": "Le plat est arrivé froid", "cats": {"problème": 1.0}}
+{"text": "L’article est déchiré", "cats": {"problème": 1.0}}
+{"text": "Le lien de paiement ne marche pas", "cats": {"problème": 1.0}}
+{"text": "J’ai reçu une mauvaise taille", "cats": {"problème": 1.0}}
+{"text": "Le livreur s’est trompé d’adresse", "cats": {"problème": 1.0}}
+{"text": "Le produit est abîmé", "cats": {"problème": 1.0}}
+{"text": "Je ne trouve pas l’article sur le site", "cats": {"problème": 1.0}}
+{"text": "Quels sont vos horaires ?", "cats": {"horaire": 1.0}}
+{"text": "Vous êtes ouverts à quelle heure ?", "cats": {"horaire": 1.0}}
+{"text": "Puis-je commander ce soir ?", "cats": {"horaire": 1.0}}
+{"text": "Vos services sont disponibles le week-end ?", "cats": {"horaire": 1.0}}
+{"text": "Vous ouvrez le dimanche ?", "cats": {"horaire": 1.0}}
+{"text": "Puis-je venir après 18h ?", "cats": {"horaire": 1.0}}
+{"text": "Quand est-ce que vous fermez ?", "cats": {"horaire": 1.0}}
+{"text": "Vous travaillez les jours fériés ?", "cats": {"horaire": 1.0}}
+{"text": "Quelles sont vos heures d’ouverture ?", "cats": {"horaire": 1.0}}
+{"text": "Est-ce que je peux vous appeler ce soir ?", "cats": {"horaire": 1.0}}

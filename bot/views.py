@@ -324,7 +324,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 import json
 
-VERIFY_TOKEN = 'molly_bot_verify'
 
 def webhook_view(request):
     if request.method == 'GET':
@@ -347,6 +346,8 @@ def webhook_view(request):
                 value = change.get('value', {})
                 messages = value.get('messages', [])
                 metadata = value.get('metadata', {})
+
+                print("🔎 metadata:", metadata)
 
                 if messages:
                     msg = messages[0]
@@ -377,9 +378,12 @@ def webhook_view(request):
                         phone_number_id__isnull=False
                     )
 
+                    metadata_phone_id = metadata.get("phone_number_id") or metadata.get("display_phone_number")
+                    print("📞 Phone ID reçu de Meta:", metadata_phone_id)
+
                     vendeur_trouvé = None
                     for vendeur in vendeurs:
-                        if vendeur.phone_number_id == metadata.get("phone_number_id"):
+                        if vendeur.phone_number_id == metadata_phone_id:
                             vendeur_trouvé = vendeur
                             break
 

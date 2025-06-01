@@ -1,0 +1,15 @@
+{
+  "labels":[
+    "salutation",
+    "remerciement",
+    "commande",
+    "produit",
+    "livraison",
+    "paiement",
+    "retour",
+    "probl\u00e8me",
+    "horaire"
+  ],
+  "threshold":0.0,
+  "positive_label":null
+}
