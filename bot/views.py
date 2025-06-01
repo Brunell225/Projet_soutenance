@@ -325,6 +325,7 @@ from django.http import HttpResponse
 import json
 
 
+@csrf_exempt
 def webhook_view(request):
     if request.method == 'GET':
         mode = request.GET.get('hub.mode')
@@ -332,65 +333,74 @@ def webhook_view(request):
         challenge = request.GET.get('hub.challenge')
 
         if mode == 'subscribe' and verify_token == VERIFY_TOKEN:
+            print("✅ Webhook vérifié par Meta")
             return HttpResponse(challenge)
+        print("❌ Tentative de vérification échouée")
         return HttpResponse("Token invalide ou mode incorrect", status=403)
 
     elif request.method == 'POST':
-        data = json.loads(request.body.decode('utf-8'))
-        print("📨 Nouveau message reçu :", json.dumps(data, indent=2))
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+            print("📨 Nouveau message reçu :", json.dumps(data, indent=2))
 
-        entry = data.get('entry', [])
-        for ent in entry:
-            changes = ent.get('changes', [])
-            for change in changes:
-                value = change.get('value', {})
-                messages = value.get('messages', [])
-                metadata = value.get('metadata', {})
-
-                print("🔎 metadata:", metadata)
-
-                if messages:
-                    msg = messages[0]
-                    from_number = msg.get('from')
-                    message_text = msg.get('text', {}).get('body', '')
-
-                    # 🔍 Analyse NLP
-                    doc = detect_intention_spacy(message_text)
-                    intent = doc.cats if hasattr(doc, "cats") else {}
-                    print("🤖 Intentions détectées :", intent)
-
-                    # 🧠 Générer la réponse
-                    if intent:
-                        best_intent = max(intent, key=intent.get)
-                        confidence = intent[best_intent]
-
-                        if confidence > 0.6:
-                            response = f"Tu parles de : {best_intent} ! Je peux t’aider 👍🏽"
-                        else:
-                            response = "Je ne suis pas sûr d’avoir compris. Peux-tu reformuler ?"
-                    else:
-                        response = "Je n’ai pas compris ton message."
-
-                    # 🔁 Identifier le bon vendeur (par phone_number_id)
-                    vendeurs = User.objects.filter(
-                        is_business_account=True,
-                        whatsapp_api_token__isnull=False,
-                        phone_number_id__isnull=False
-                    )
+            entry = data.get('entry', [])
+            for ent in entry:
+                changes = ent.get('changes', [])
+                for change in changes:
+                    value = change.get('value', {})
+                    messages = value.get('messages', [])
+                    metadata = value.get('metadata', {})
 
                     metadata_phone_id = metadata.get("phone_number_id") or metadata.get("display_phone_number")
                     print("📞 Phone ID reçu de Meta:", metadata_phone_id)
 
-                    vendeur_trouvé = None
-                    for vendeur in vendeurs:
-                        if vendeur.phone_number_id == metadata_phone_id:
-                            vendeur_trouvé = vendeur
-                            break
+                    if messages:
+                        msg = messages[0]
+                        from_number = msg.get('from')
+                        message_text = msg.get('text', {}).get('body', '')
 
-                    if vendeur_trouvé:
-                        send_message_to_whatsapp(from_number, response, vendeur_trouvé)
-                    else:
-                        print("❌ Aucun vendeur correspondant à ce phone_number_id")
+                        print(f"💬 Message de {from_number} : {message_text}")
+
+                        # === Analyse NLP
+                        try:
+                            doc = detect_intention_spacy(message_text)
+                            intent = doc.cats if hasattr(doc, "cats") else {}
+                            print("🤖 Intentions détectées :", intent)
+                        except Exception as nlp_err:
+                            print("⚠️ Erreur NLP :", nlp_err)
+                            intent = {}
+
+                        # === Générer une réponse
+                        if intent:
+                            best_intent = max(intent, key=intent.get)
+                            confidence = intent[best_intent]
+
+                            if confidence > 0.6:
+                                response = f"Tu parles de : {best_intent} ! Je peux t’aider 👍🏽"
+                            else:
+                                response = "Je ne suis pas sûr d’avoir compris. Peux-tu reformuler ?"
+                        else:
+                            response = "Je n’ai pas compris ton message."
+
+                        # === Identifier le bon vendeur
+                        vendeur_trouvé = User.objects.filter(
+                            is_business_account=True,
+                            whatsapp_api_token__isnull=False,
+                            phone_number_id=metadata_phone_id
+                        ).first()
+
+                        if vendeur_trouvé:
+                            try:
+                                print("📤 Envoi de la réponse au client...")
+                                send_message_to_whatsapp(from_number, response, vendeur_trouvé)
+                            except Exception as send_err:
+                                print("❌ Erreur lors de l'envoi du message :", send_err)
+                        else:
+                            print("❌ Aucun vendeur correspondant à ce phone_number_id :", metadata_phone_id)
+
+        except Exception as err:
+            print("🚨 Erreur lors du traitement du webhook :", err)
+            return HttpResponse("Erreur interne", status=500)
 
         return HttpResponse("EVENT_RECEIVED", status=200)
 
