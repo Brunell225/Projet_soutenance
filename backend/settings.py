@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 from datetime import timedelta
+from dotenv import load_dotenv
+load_dotenv()
 
 # Détection environnement Railway
 USE_PRODUCTION_DB = os.environ.get("USE_PRODUCTION_DB", "").lower() in ["1", "true", "yes"]
