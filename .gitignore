@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+env/
+venv/
+.env
+.env.*
+
+# SpaCy & modèle entraîné
+*.spacy
+bot_nlp_model/model-last/
+bot_nlp_model/model-best/
+
+# Autres
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.sqlite3
+*.db
