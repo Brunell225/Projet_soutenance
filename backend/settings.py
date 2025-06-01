@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 from datetime import timedelta
 
+USE_PRODUCTION_DB = os.environ.get("USE_PRODUCTION_DB", "").lower() in ["1", "true", "yes"]
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -83,30 +85,23 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-USE_PRODUCTION_DB = os.environ.get("USE_PRODUCTION_DB", "").lower() in ["1", "true", "yes", "True"]
-
 if USE_PRODUCTION_DB:
+    import dj_database_url
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ.get("PGDATABASE"),
-            'USER': os.environ.get("PGUSER"),
-            'PASSWORD': os.environ.get("PGPASSWORD"),
-            'HOST': os.environ.get("PGHOST"),
-            'PORT': os.environ.get("PGPORT", "5432"),
-        }
+        'default': dj_database_url.config(conn_max_age=600)
     }
 else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': "nom_local",
-            'USER': "utilisateur_local",
-            'PASSWORD': "mot_de_passe_local",
-            'HOST': "localhost",
-            'PORT': "5432",
+            'NAME': 'nom_local',
+            'USER': 'utilisateur_local',
+            'PASSWORD': 'mot_de_passe_local',
+            'HOST': 'localhost',
+            'PORT': '5432',
         }
     }
+
 
 
 
