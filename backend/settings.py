@@ -89,22 +89,22 @@ if USE_PRODUCTION_DB:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'railway',
-            'USER': 'postgres',
-            'PASSWORD': 'TCOUUWiurPKfexTTrCAArTJLJJYOhViA',
-            'HOST': 'mainline.proxy.rlwy.net',
-            'PORT': '54787',
+            'NAME': os.environ.get("PGDATABASE"),
+            'USER': os.environ.get("PGUSER"),
+            'PASSWORD': os.environ.get("PGPASSWORD"),
+            'HOST': os.environ.get("PGHOST"),
+            'PORT': os.environ.get("PGPORT", "5432"),
         }
     }
 else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'nom_local',
-            'USER': 'utilisateur_local',
-            'PASSWORD': 'mot_de_passe_local',
-            'HOST': 'localhost',
-            'PORT': '5432',
+            'NAME': "nom_local",
+            'USER': "utilisateur_local",
+            'PASSWORD': "mot_de_passe_local",
+            'HOST': "localhost",
+            'PORT': "5432",
         }
     }
 
