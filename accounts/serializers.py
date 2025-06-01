@@ -2,6 +2,9 @@ from rest_framework import serializers
 from django.contrib.auth.password_validation import validate_password
 from rest_framework.validators import ValidationError
 from .models import User
+import logging
+
+logger = logging.getLogger(__name__)  # 🔍 Pour les logs
 
 # ✅ Validation du numéro WhatsApp
 def validate_whatsapp_number(value):
@@ -49,11 +52,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
 
     def validate(self, attrs):
+        logger.info("🔍 [Register] Données reçues pour validation : %s", attrs)  # 🔍
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError({"password": "Les mots de passe ne correspondent pas."})
         return attrs
 
     def create(self, validated_data):
+        logger.info("✅ [Register] Données validées pour création : %s", validated_data)  # 🔍
         validated_data.pop('password2')
         user = User.objects.create(
             username=validated_data['username'],
@@ -63,6 +68,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
         user.set_password(validated_data['password'])
         user.save()
+        logger.info("🎉 [Register] Utilisateur créé avec succès : %s", user.id)  # 🔍
         return user
 
 class UserUpdateSerializer(serializers.ModelSerializer):
