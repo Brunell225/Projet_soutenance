@@ -83,7 +83,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-USE_PRODUCTION_DB = os.environ.get("USE_PRODUCTION_DB") == "1"
+USE_PRODUCTION_DB = os.environ.get("USE_PRODUCTION_DB", "").lower() in ["1", "true", "yes", "True"]
 
 if USE_PRODUCTION_DB:
     DATABASES = {
