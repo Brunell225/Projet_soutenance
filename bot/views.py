@@ -343,63 +343,57 @@ def webhook_view(request):
             data = json.loads(request.body.decode('utf-8'))
             print("📨 Nouveau message reçu :", json.dumps(data, indent=2))
 
-            entry = data.get('entry', [])
-            for ent in entry:
-                changes = ent.get('changes', [])
-                for change in changes:
+            for ent in data.get('entry', []):
+                for change in ent.get('changes', []):
                     value = change.get('value', {})
                     messages = value.get('messages', [])
                     metadata = value.get('metadata', {})
+                    phone_number_id = metadata.get("phone_number_id") or metadata.get("display_phone_number")
 
-                    metadata_phone_id = metadata.get("phone_number_id") or metadata.get("display_phone_number")
-                    print("📞 Phone ID reçu de Meta:", metadata_phone_id)
+                    print("📞 Phone ID reçu :", phone_number_id)
 
-                    if messages:
-                        msg = messages[0]
-                        from_number = msg.get('from')
-                        message_text = msg.get('text', {}).get('body', '')
+                    if not messages:
+                        print("📭 Aucun message reçu dans cette requête.")
+                        continue
 
-                        print(f"💬 Message de {from_number} : {message_text}")
+                    msg = messages[0]
+                    from_number = msg.get('from')
+                    message_text = msg.get('text', {}).get('body', '')
 
-                        # === Analyse NLP
+                    print(f"💬 Message de {from_number} : {message_text}")
+
+                    try:
+                        doc = detect_intention_spacy(message_text)
+                        intent = doc.cats if hasattr(doc, "cats") else {}
+                        print("🤖 Intentions détectées :", intent)
+                    except Exception as e:
+                        print("⚠️ Erreur NLP :", str(e))
+                        intent = {}
+
+                    if intent:
+                        best_intent = max(intent, key=intent.get)
+                        confidence = intent[best_intent]
+                        response = f"Tu parles de : {best_intent} ! Je peux t’aider 👍🏽" if confidence > 0.6 else "Je ne suis pas sûr d’avoir compris. Peux-tu reformuler ?"
+                    else:
+                        response = "Je n’ai pas compris ton message."
+
+                    vendeur = User.objects.filter(
+                        is_business_account=True,
+                        whatsapp_api_token__isnull=False,
+                        phone_number_id=phone_number_id
+                    ).first()
+
+                    if vendeur:
                         try:
-                            doc = detect_intention_spacy(message_text)
-                            intent = doc.cats if hasattr(doc, "cats") else {}
-                            print("🤖 Intentions détectées :", intent)
-                        except Exception as nlp_err:
-                            print("⚠️ Erreur NLP :", nlp_err)
-                            intent = {}
-
-                        # === Générer une réponse
-                        if intent:
-                            best_intent = max(intent, key=intent.get)
-                            confidence = intent[best_intent]
-
-                            if confidence > 0.6:
-                                response = f"Tu parles de : {best_intent} ! Je peux t’aider 👍🏽"
-                            else:
-                                response = "Je ne suis pas sûr d’avoir compris. Peux-tu reformuler ?"
-                        else:
-                            response = "Je n’ai pas compris ton message."
-
-                        # === Identifier le bon vendeur
-                        vendeur_trouvé = User.objects.filter(
-                            is_business_account=True,
-                            whatsapp_api_token__isnull=False,
-                            phone_number_id=metadata_phone_id
-                        ).first()
-
-                        if vendeur_trouvé:
-                            try:
-                                print("📤 Envoi de la réponse au client...")
-                                send_message_to_whatsapp(from_number, response, vendeur_trouvé)
-                            except Exception as send_err:
-                                print("❌ Erreur lors de l'envoi du message :", send_err)
-                        else:
-                            print("❌ Aucun vendeur correspondant à ce phone_number_id :", metadata_phone_id)
+                            send_message_to_whatsapp(from_number, response, vendeur)
+                            print("✅ Message envoyé avec succès.")
+                        except Exception as send_error:
+                            print("❌ Erreur d'envoi WhatsApp :", send_error)
+                    else:
+                        print("❌ Aucun vendeur trouvé avec phone_number_id :", phone_number_id)
 
         except Exception as err:
-            print("🚨 Erreur lors du traitement du webhook :", err)
+            print("🚨 Erreur générale :", err)
             return HttpResponse("Erreur interne", status=500)
 
         return HttpResponse("EVENT_RECEIVED", status=200)
