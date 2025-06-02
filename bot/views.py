@@ -16,6 +16,10 @@ from accounts.permissions import IsVendeur
 import requests
 import re
 from accounts.models import User
+import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 VERIFY_TOKEN = 'molly_bot_verify' 
@@ -320,11 +324,6 @@ class ProductViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
 
-from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
-import json
-
-
 @csrf_exempt
 def webhook_view(request):
     if request.method == 'GET':
@@ -339,9 +338,10 @@ def webhook_view(request):
         return HttpResponse("Token invalide ou mode incorrect", status=403)
 
     elif request.method == 'POST':
+        print("🚨 Webhook POST reçu !")  # 🔥 Important pour confirmer l'appel
         try:
             data = json.loads(request.body.decode('utf-8'))
-            print("📨 Nouveau message reçu :", json.dumps(data, indent=2))
+            print("📨 Données reçues :", json.dumps(data, indent=2))
 
             for ent in data.get('entry', []):
                 for change in ent.get('changes', []):
@@ -360,12 +360,13 @@ def webhook_view(request):
                     from_number = msg.get('from')
                     message_text = msg.get('text', {}).get('body', '')
 
-                    print(f"💬 Message de {from_number} : {message_text}")
+                    print(f"💬 Message reçu de {from_number} : '{message_text}'")
 
+                    # Analyse NLP
                     try:
                         doc = detect_intention_spacy(message_text)
                         intent = doc.cats if hasattr(doc, "cats") else {}
-                        print("🤖 Intentions détectées :", intent)
+                        print("🤖 Intention NLP :", intent)
                     except Exception as e:
                         print("⚠️ Erreur NLP :", str(e))
                         intent = {}
@@ -377,6 +378,7 @@ def webhook_view(request):
                     else:
                         response = "Je n’ai pas compris ton message."
 
+                    # Trouver le vendeur lié à ce numéro
                     vendeur = User.objects.filter(
                         is_business_account=True,
                         whatsapp_api_token__isnull=False,
@@ -385,15 +387,16 @@ def webhook_view(request):
 
                     if vendeur:
                         try:
+                            print("📤 Envoi du message à WhatsApp...")
                             send_message_to_whatsapp(from_number, response, vendeur)
-                            print("✅ Message envoyé avec succès.")
-                        except Exception as send_error:
-                            print("❌ Erreur d'envoi WhatsApp :", send_error)
+                            print("✅ Message WhatsApp envoyé avec succès.")
+                        except Exception as send_err:
+                            print("❌ Erreur lors de l'envoi :", send_err)
                     else:
-                        print("❌ Aucun vendeur trouvé avec phone_number_id :", phone_number_id)
+                        print("❌ Aucun vendeur trouvé pour ce phone_number_id :", phone_number_id)
 
-        except Exception as err:
-            print("🚨 Erreur générale :", err)
+        except Exception as global_err:
+            print("🚨 Erreur globale webhook :", global_err)
             return HttpResponse("Erreur interne", status=500)
 
         return HttpResponse("EVENT_RECEIVED", status=200)
