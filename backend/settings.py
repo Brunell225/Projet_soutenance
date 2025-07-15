@@ -1,6 +1,6 @@
 import os
-from pathlib import Path
 import sys
+from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 
@@ -8,23 +8,17 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Clé secrète
+# Sécurité
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
+DEBUG = os.getenv("DEBUG", "False").lower() in ["true", "1", "yes"]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
-# Debug
-DEBUG = os.getenv("DÉBOGUER", "False").lower() in ["true", "1", "yes"]
+# CORS
+CORS_ALLOW_ALL_ORIGINS = True  # à désactiver en production stricte
 
-# Hôtes autorisés
-ALLOWED_HOSTS = os.getenv("HÔTES_AUTORISÉS", "*").split(",")
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    f"https://{os.getenv('RAILWAY_STATIC_DOMAIN')}",  # optionnel si Railway te génère un domaine
-]
-
-# Application installée
+# Applications
 INSTALLED_APPS = [
-    'jazzmin',
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -83,8 +77,10 @@ DATABASES = {
     }
 }
 
+# Utilisateur personnalisé
 AUTH_USER_MODEL = 'accounts.User'
 
+# JWT
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -100,18 +96,23 @@ SIMPLE_JWT = {
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
 
+# Internationalisation
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
+# Fichiers statiques & médias
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# Auto champ
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Swagger
 SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': False,
     'SECURITY_DEFINITIONS': {
@@ -123,8 +124,7 @@ SWAGGER_SETTINGS = {
     },
 }
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+# Sécurité HTTP
 SECURE_SSL_REDIRECT = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
@@ -134,6 +134,7 @@ SECURE_HSTS_PRELOAD = not DEBUG
 SECURE_CONTENT_TYPE_NOSNIFF = not DEBUG
 SECURE_BROWSER_XSS_FILTER = not DEBUG
 
+# Logging
 LOGGING = {
     "version": 1,
     "handlers": {
@@ -148,6 +149,7 @@ LOGGING = {
     },
 }
 
+# Jazzmin UI
 JAZZMIN_SETTINGS = {
     "site_title": "BOT Admin",
     "site_header": "Gestion des Vendeurs",
@@ -180,6 +182,7 @@ JAZZMIN_UI_TWEAKS = {
     "primary_color": "#37a0b3",
 }
 
+# Email & WhatsApp (valeurs depuis .env)
 DEFAULT_FROM_EMAIL = 'bot@tondomaine.com'
 SUPPORT_EMAIL = 'support@tondomaine.com'
 
