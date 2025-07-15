@@ -33,7 +33,7 @@ class User(AbstractUser):
 
 class PasswordResetCode(models.Model):
     email = models.EmailField()
-    code = models.CharField(max_length=6)
+    code = models.CharField(max_length=8)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def is_expired(self):
