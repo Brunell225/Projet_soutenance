@@ -3,20 +3,21 @@ import sys
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
+import dj_database_url
 
-# ✅ Base du projet (racine où se trouve .env)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ✅ Charger explicitement le fichier .env depuis la racine du projet
-load_dotenv(dotenv_path=BASE_DIR / ".env")
+# Charger .env local uniquement en dev (utile si DEBUG=True en local)
+if os.path.exists(BASE_DIR / ".env"):
+    load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 # Sécurité
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
 DEBUG = os.getenv("DEBUG", "False").lower() in ["true", "1", "yes"]
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "web-production-bc787.up.railway.app").split(",")
 
 # CORS
-CORS_ALLOW_ALL_ORIGINS = True  # à désactiver en production stricte
+CORS_ALLOW_ALL_ORIGINS = DEBUG
 
 # Applications
 INSTALLED_APPS = [
@@ -39,13 +40,13 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # avant SessionMiddleware
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -67,16 +68,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
-# Base de données Railway
+# Railway PostgreSQL
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT", "5432"),
-    }
+    "default": dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 
 # Utilisateur personnalisé
@@ -111,7 +105,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Auto champ
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Swagger
@@ -126,7 +119,7 @@ SWAGGER_SETTINGS = {
     },
 }
 
-# Sécurité HTTP
+# Sécurité production
 SECURE_SSL_REDIRECT = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
@@ -184,7 +177,7 @@ JAZZMIN_UI_TWEAKS = {
     "primary_color": "#37a0b3",
 }
 
-# Email & WhatsApp (valeurs depuis .env)
+# Email & WhatsApp
 DEFAULT_FROM_EMAIL = 'bot@tondomaine.com'
 SUPPORT_EMAIL = 'support@tondomaine.com'
 
