@@ -4,9 +4,11 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 
-load_dotenv()
-
+# ✅ Base du projet (racine où se trouve .env)
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# ✅ Charger explicitement le fichier .env depuis la racine du projet
+load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 # Sécurité
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
@@ -125,7 +127,7 @@ SWAGGER_SETTINGS = {
 }
 
 # Sécurité HTTP
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
 SECURE_HSTS_SECONDS = 3600 if not DEBUG else 0
