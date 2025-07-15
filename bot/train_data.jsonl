@@ -1,0 +1,270 @@
+{"text": "bonjour", "cats": {"salutation": 1.0}}
+{"text": "salut", "cats": {"salutation": 1.0}}
+{"text": "coucou", "cats": {"salutation": 1.0}}
+{"text": "bonsoir", "cats": {"salutation": 1.0}}
+{"text": "yo", "cats": {"salutation": 1.0}}
+{"text": "hey", "cats": {"salutation": 1.0}}
+{"text": "bienvenue", "cats": {"salutation": 1.0}}
+{"text": "allo", "cats": {"salutation": 1.0}}
+{"text": "hello", "cats": {"salutation": 1.0}}
+{"text": "salutations", "cats": {"salutation": 1.0}}
+{"text": "cc", "cats": {"salutation": 1.0}}
+{"text": "bjr", "cats": {"salutation": 1.0}}
+{"text": "bon matin", "cats": {"salutation": 1.0}}
+{"text": "bon après-midi", "cats": {"salutation": 1.0}}
+{"text": "je te salue", "cats": {"salutation": 1.0}}
+{"text": "bonjour à tous", "cats": {"salutation": 1.0}}
+{"text": "hello le service", "cats": {"salutation": 1.0}}
+{"text": "salut les amis", "cats": {"salutation": 1.0}}
+{"text": "salut la team", "cats": {"salutation": 1.0}}
+{"text": "bonjour à vous", "cats": {"salutation": 1.0}}
+{"text": "comment tu vas", "cats": {"salutation": 1.0}}
+{"text": "comment vas tu", "cats": {"salutation": 1.0}}
+{"text": "bsr", "cats": {"salutation": 1.0}}
+{"text": "sdq", "cats": {"salutation": 1.0}}
+{"text": "merci", "cats": {"remerciement": 1.0}}
+{"text": "merci beaucoup", "cats": {"remerciement": 1.0}}
+{"text": "merci infiniment", "cats": {"remerciement": 1.0}}
+{"text": "super travail", "cats": {"remerciement": 1.0}}
+{"text": "cool merci", "cats": {"remerciement": 1.0}}
+{"text": "vous êtes au top", "cats": {"remerciement": 1.0}}
+{"text": "je vous remercie", "cats": {"remerciement": 1.0}}
+{"text": "gentil de votre part", "cats": {"remerciement": 1.0}}
+{"text": "sympa", "cats": {"remerciement": 1.0}}
+{"text": "trop gentil", "cats": {"remerciement": 1.0}}
+{"text": "parfait merci", "cats": {"remerciement": 1.0}}
+{"text": "génial merci", "cats": {"remerciement": 1.0}}
+{"text": "top comme service", "cats": {"remerciement": 1.0}}
+{"text": "chouette", "cats": {"remerciement": 1.0}}
+{"text": "nickel", "cats": {"remerciement": 1.0}}
+{"text": "bravo", "cats": {"remerciement": 1.0}}
+{"text": "félicitations", "cats": {"remerciement": 1.0}}
+{"text": "merci à vous", "cats": {"remerciement": 1.0}}
+{"text": "thanks", "cats": {"remerciement": 1.0}}
+{"text": "gratitude", "cats": {"remerciement": 1.0}}
+{"text": "ta xiencé", "cats": {"remerciement": 1.0}}
+{"text": "zoooo", "cats": {"remerciement": 1.0}}
+{"text": "anitché", "cats": {"remerciement": 1.0}}
+{"text": "je veux commander", "cats": {"commande": 1.0}}
+{"text": "comment passer une commande", "cats": {"commande": 1.0}}
+{"text": "je souhaite acheter", "cats": {"commande": 1.0}}
+{"text": "je voudrais un panier", "cats": {"commande": 1.0}}
+{"text": "je veux ce produit", "cats": {"commande": 1.0}}
+{"text": "peux-tu me le réserver", "cats": {"commande": 1.0}}
+{"text": "je finalise ma commande", "cats": {"commande": 1.0}}
+{"text": "je veux payer", "cats": {"commande": 1.0}}
+{"text": "envoyez-moi la facture", "cats": {"commande": 1.0}}
+{"text": "je passe la commande maintenant", "cats": {"commande": 1.0}}
+{"text": "comment acheter", "cats": {"commande": 1.0}}
+{"text": "dispo pour commander", "cats": {"commande": 1.0}}
+{"text": "je clique où pour acheter", "cats": {"commande": 1.0}}
+{"text": "je choisis cet article", "cats": {"commande": 1.0}}
+{"text": "j’achète", "cats": {"commande": 1.0}}
+{"text": "c’est bon je prends", "cats": {"commande": 1.0}}
+{"text": "je confirme la commande", "cats": {"commande": 1.0}}
+{"text": "je veux en commander 2", "cats": {"commande": 1.0}}
+{"text": "commande confirmée", "cats": {"commande": 1.0}}
+{"text": "je veux réserver", "cats": {"commande": 1.0}}
+{"text": "je passe commande", "cats": {"commande": 1.0}}
+{"text": "acheter maintenant", "cats": {"commande": 1.0}}
+{"text": "procéder au paiement", "cats": {"commande": 1.0}}
+{"text": "valider mon panier", "cats": {"commande": 1.0}}
+{"text": "je veux ça", "cats": {"commande": 1.0}}
+{"text": "faut garder ça pour moi", "cats": {"commande": 1.0}}
+{"text": "quels produits avez-vous", "cats": {"produit": 1.0}}
+{"text": "montre-moi les articles", "cats": {"produit": 1.0}}
+{"text": "as-tu des chaussures", "cats": {"produit": 1.0}}
+{"text": "je cherche une robe", "cats": {"produit": 1.0}}
+{"text": "vous avez des vêtements", "cats": {"produit": 1.0}}
+{"text": "des jeans en stock ?", "cats": {"produit": 1.0}}
+{"text": "affichez les t-shirts", "cats": {"produit": 1.0}}
+{"text": "avez-vous des baskets", "cats": {"produit": 1.0}}
+{"text": "je veux voir les accessoires", "cats": {"produit": 1.0}}
+{"text": "proposez-moi des sacs", "cats": {"produit": 1.0}}
+{"text": "vous avez du S en taille ?", "cats": {"produit": 1.0}}
+{"text": "vous avez du neuf ?", "cats": {"produit": 1.0}}
+{"text": "je veux des nouveautés", "cats": {"produit": 1.0}}
+{"text": "vos meilleurs articles ?", "cats": {"produit": 1.0}}
+{"text": "produits femmes ?", "cats": {"produit": 1.0}}
+{"text": "des habits hommes ?", "cats": {"produit": 1.0}}
+{"text": "tenues pour enfants ?", "cats": {"produit": 1.0}}
+{"text": "quels modèles disponibles ?", "cats": {"produit": 1.0}}
+{"text": "je veux un article tendance", "cats": {"produit": 1.0}}
+{"text": "produit en promotion ?", "cats": {"produit": 1.0}}
+{"text": "tu as taille s", "cats": {"produit": 1.0}}
+{"text": "tu as taille l", "cats": {"produit": 1.0}}
+{"text": "tu as taille m", "cats": {"produit": 1.0}}
+{"text": "tu as taille xl", "cats": {"produit": 1.0}}
+{"text": "envoie moi les photos", "cats": {"produit": 1.0}}
+{"text": "qu'est ce qui est disponible ?", "cats": {"produit": 1.0}}
+{"text": "C'est quoi qui disponible", "cats": {"produit": 1.0}}
+{"text": "c'est quoi qui est là", "cats": {"produit": 1.0}}
+{"text": "comment se passe la livraison", "cats": {"livraison": 1.0}}
+{"text": "livrez-vous à domicile ?", "cats": {"livraison": 1.0}}
+{"text": "vous livrez à Abidjan ?", "cats": {"livraison": 1.0}}
+{"text": "quel est le délai de livraison", "cats": {"livraison": 1.0}}
+{"text": "le colis arrive quand ?", "cats": {"livraison": 1.0}}
+{"text": "est-ce que je peux suivre mon colis", "cats": {"livraison": 1.0}}
+{"text": "j’attends ma livraison", "cats": {"livraison": 1.0}}
+{"text": "toujours pas reçu", "cats": {"livraison": 1.0}}
+{"text": "est-ce livré aujourd’hui ?", "cats": {"livraison": 1.0}}
+{"text": "en combien de temps ?", "cats": {"livraison": 1.0}}
+{"text": "vous expédiez dans tout le pays ?", "cats": {"livraison": 1.0}}
+{"text": "vous livrez à l’international ?", "cats": {"livraison": 1.0}}
+{"text": "je veux une livraison rapide", "cats": {"livraison": 1.0}}
+{"text": "peut-on choisir l’horaire ?", "cats": {"livraison": 1.0}}
+{"text": "frais de livraison ?", "cats": {"livraison": 1.0}}
+{"text": "livraison offerte ?", "cats": {"livraison": 1.0}}
+{"text": "suivi du colis svp", "cats": {"livraison": 1.0}}
+{"text": "où est mon colis", "cats": {"livraison": 1.0}}
+{"text": "retard de livraison", "cats": {"livraison": 1.0}}
+{"text": "colis perdu ?", "cats": {"livraison": 1.0}}
+{"text": "livraison express ?", "cats": {"livraison": 1.0}}
+{"text": "frais de port", "cats": {"livraison": 1.0}}
+{"text": "délai de livraison", "cats": {"livraison": 1.0}}
+{"text": "gratuité livraison", "cats": {"livraison": 1.0}}
+{"text": "où est mon colis ?", "cats": {"livraison": 1.0}}
+{"text": "comment retourner un article", "cats": {"retour": 1.0}}
+{"text": "je veux un remboursement", "cats": {"retour": 1.0}}
+{"text": "je veux échanger le produit", "cats": {"retour": 1.0}}
+{"text": "je ne suis pas satisfait", "cats": {"retour": 1.0}}
+{"text": "article non conforme", "cats": {"retour": 1.0}}
+{"text": "je veux annuler ma commande", "cats": {"retour": 1.0}}
+{"text": "le produit ne me va pas", "cats": {"retour": 1.0}}
+{"text": "j’ai changé d’avis", "cats": {"retour": 1.0}}
+{"text": "puis-je faire un retour", "cats": {"retour": 1.0}}
+{"text": "c’est possible d’échanger ?", "cats": {"retour": 1.0}}
+{"text": "je veux un avoir", "cats": {"retour": 1.0}}
+{"text": "vous acceptez les retours ?", "cats": {"retour": 1.0}}
+{"text": "j’ai reçu le mauvais produit", "cats": {"retour": 1.0}}
+{"text": "remboursement possible ?", "cats": {"retour": 1.0}}
+{"text": "retour gratuit ?", "cats": {"retour": 1.0}}
+{"text": "conditions de retour ?", "cats": {"retour": 1.0}}
+{"text": "je fais une réclamation", "cats": {"retour": 1.0}}
+{"text": "produit abîmé", "cats": {"retour": 1.0}}
+{"text": "je renvoie l’article", "cats": {"retour": 1.0}}
+{"text": "échange sous combien de jours ?", "cats": {"retour": 1.0}}
+{"text": "je déteste ce produit", "cats": {"retour": 1.0}}
+{"text": "article défectueux", "cats": {"retour": 1.0}}
+{"text": "mauvais achat", "cats": {"retour": 1.0}}
+{"text": "insatisfait", "cats": {"retour": 1.0}}
+{"text": "j’ai un souci", "cats": {"problème": 1.0}}
+{"text": "problème avec ma commande", "cats": {"problème": 1.0}}
+{"text": "bug sur le site", "cats": {"problème": 1.0}}
+{"text": "je n’arrive pas à payer", "cats": {"problème": 1.0}}
+{"text": "le lien ne fonctionne pas", "cats": {"problème": 1.0}}
+{"text": "erreur lors de l’achat", "cats": {"problème": 1.0}}
+{"text": "ça ne marche pas", "cats": {"problème": 1.0}}
+{"text": "je suis bloqué", "cats": {"problème": 1.0}}
+{"text": "j’ai reçu un message d’erreur", "cats": {"problème": 1.0}}
+{"text": "rien ne s’affiche", "cats": {"problème": 1.0}}
+{"text": "je ne comprends pas", "cats": {"problème": 1.0}}
+{"text": "je veux parler au support", "cats": {"problème": 1.0}}
+{"text": "ça plante tout le temps", "cats": {"problème": 1.0}}
+{"text": "c’est lent", "cats": {"problème": 1.0}}
+{"text": "mon panier est vide", "cats": {"problème": 1.0}}
+{"text": "le code promo ne marche pas", "cats": {"problème": 1.0}}
+{"text": "je ne vois pas mon produit", "cats": {"problème": 1.0}}
+{"text": "vous avez un bug", "cats": {"problème": 1.0}}
+{"text": "service indisponible", "cats": {"problème": 1.0}}
+{"text": "vous ouvrez à quelle heure", "cats": {"horaire": 1.0}}
+{"text": "quand êtes-vous disponibles", "cats": {"horaire": 1.0}}
+{"text": "vos horaires svp", "cats": {"horaire": 1.0}}
+{"text": "êtes-vous ouverts dimanche ?", "cats": {"horaire": 1.0}}
+{"text": "vous fermez à quelle heure", "cats": {"horaire": 1.0}}
+{"text": "je veux connaître vos heures", "cats": {"horaire": 1.0}}
+{"text": "vous êtes disponibles maintenant ?", "cats": {"horaire": 1.0}}
+{"text": "je peux commander ce soir ?", "cats": {"horaire": 1.0}}
+{"text": "je peux appeler demain ?", "cats": {"horaire": 1.0}}
+{"text": "vos jours d’ouverture", "cats": {"horaire": 1.0}}
+{"text": "vous êtes fermés ?", "cats": {"horaire": 1.0}}
+{"text": "quand vous travaillez ?", "cats": {"horaire": 1.0}}
+{"text": "heures d’ouverture svp", "cats": {"horaire": 1.0}}
+{"text": "vous êtes en ligne ?", "cats": {"horaire": 1.0}}
+{"text": "vous travaillez le week-end ?", "cats": {"horaire": 1.0}}
+{"text": "je peux vous contacter maintenant ?", "cats": {"horaire": 1.0}}
+{"text": "je peux passer en magasin ?", "cats": {"horaire": 1.0}}
+{"text": "heure limite de commande ?", "cats": {"horaire": 1.0}}
+{"text": "service actif à midi ?", "cats": {"horaire": 1.0}}
+{"text": "vous bossez le samedi ?", "cats": {"horaire": 1.0}}
+{"text": "salut les horaires", "cats": {"horaire": 1.0}}
+{"text": "coucou vous ouvrez quand", "cats": {"horaire": 1.0}}
+{"text": "bjr c'est quoi vos heures", "cats": {"horaire": 1.0}}
+{"text": "tu es là jusqu'à quelle heure", "cats": {"horaire": 1.0}}
+{"text": "comment puis-je payer", "cats": {"paiement": 1.0}}
+{"text": "quels moyens de paiement", "cats": {"paiement": 1.0}}
+{"text": "vous acceptez Orange Money ?", "cats": {"paiement": 1.0}}
+{"text": "paiement par carte ?", "cats": {"paiement": 1.0}}
+{"text": "je paie comment", "cats": {"paiement": 1.0}}
+{"text": "vous prenez le cash ?", "cats": {"paiement": 1.0}}
+{"text": "possible de payer à la livraison ?", "cats": {"paiement": 1.0}}
+{"text": "vous avez PayPal ?", "cats": {"paiement": 1.0}}
+{"text": "je veux payer en ligne", "cats": {"paiement": 1.0}}
+{"text": "paiement sécurisé ?", "cats": {"paiement": 1.0}}
+{"text": "le site est fiable ?", "cats": {"paiement": 1.0}}
+{"text": "je veux faire un virement", "cats": {"paiement": 1.0}}
+{"text": "vous avez Wave ?", "cats": {"paiement": 1.0}}
+{"text": "comment faire le paiement", "cats": {"paiement": 1.0}}
+{"text": "je règle par Moov Money", "cats": {"paiement": 1.0}}
+{"text": "j’ai payé mais rien reçu", "cats": {"paiement": 1.0}}
+{"text": "je veux payer en plusieurs fois", "cats": {"paiement": 1.0}}
+{"text": "je paie comment avec mobile money", "cats": {"paiement": 1.0}}
+{"text": "les frais de paiement ?", "cats": {"paiement": 1.0}}
+{"text": "je vous fais un versement", "cats": {"paiement": 1.0}}
+{"text": "bonjour je veux payer", "cats": {"paiement": 1.0}}
+{"text": "salut comment payer", "cats": {"paiement": 1.0}}
+{"text": "coucou pour régler", "cats": {"paiement": 1.0}}
+{"text": "tu prends wave", "cats": {"paiement": 1.0}}
+{"text": "tu prends OM", "cats": {"paiement": 1.0}}
+{"text": "tu prends orange money", "cats": {"paiement": 1.0}}
+{"text": "tu prends moov money", "cats": {"paiement": 1.0}}
+{"text": "tu prends MTN money", "cats": {"paiement": 1.0}}
+{"text": "non", "cats": {"rejet": 1.0}}
+{"text": "rien", "cats": {"rejet": 1.0}}
+{"text": "en rien", "cats": {"rejet": 1.0}}
+{"text": "pas besoin", "cats": {"rejet": 1.0}}
+{"text": "je regarde seulement", "cats": {"rejet": 1.0}}
+{"text": "pas maintenant", "cats": {"rejet": 1.0}}
+{"text": "plus tard", "cats": {"rejet": 1.0}}
+{"text": "merci mais non", "cats": {"rejet": 1.0}}
+{"text": "c’est bon", "cats": {"rejet": 1.0}}
+{"text": "je veux rien", "cats": {"rejet": 1.0}}
+{"text": "je n’ai pas besoin d’aide", "cats": {"rejet": 1.0}}
+{"text": "pas intéressé", "cats": {"rejet": 1.0}}
+{"text": "je fais juste un tour", "cats": {"rejet": 1.0}}
+{"text": "je regarde pour l’instant", "cats": {"rejet": 1.0}}
+{"text": "ça ira", "cats": {"rejet": 1.0}}
+{"text": "je veux juste voir", "cats": {"rejet": 1.0}}
+{"text": "laisse tomber", "cats": {"rejet": 1.0}}
+{"text": "aucun souci", "cats": {"rejet": 1.0}}
+{"text": "je gère", "cats": {"rejet": 1.0}}
+{"text": "je me débrouille", "cats": {"rejet": 1.0}}
+{"text": "merci mais ça ira", "cats": {"rejet": 1.0}}
+{"text": "pas tout de suite", "cats": {"rejet": 1.0}}
+{"text": "je vais réfléchir", "cats": {"rejet": 1.0}}
+{"text": "ce n’est pas urgent", "cats": {"rejet": 1.0}}
+{"text": "je reviendrai plus tard", "cats": {"rejet": 1.0}}
+{"text": "je ne veux rien pour l’instant", "cats": {"rejet": 1.0}}
+{"text": "j’ai changé d’avis", "cats": {"rejet": 1.0}}
+{"text": "ce n’est plus nécessaire", "cats": {"rejet": 1.0}}
+{"text": "je ne veux pas discuter", "cats": {"rejet": 1.0}}
+{"text": "je veux arrêter", "cats": {"rejet": 1.0}}
+{"text": "laisse-moi tranquille", "cats": {"rejet": 1.0}}
+{"text": "on se reparle plus tard", "cats": {"rejet": 1.0}}
+{"text": "quel temps fait-il", "cats": {"rejet": 1.0}}
+{"text": "raconte une blague", "cats": {"rejet": 1.0}}
+{"text": "qui a gagné le match ?", "cats": {"rejet": 1.0}}
+{"text": "quelle est ta couleur préférée ?", "cats": {"rejet": 1.0}}
+{"text": "parle-moi de toi", "cats": {"rejet": 1.0}}
+{"text": "que fais-tu ce weekend ?", "cats": {"rejet": 1.0}}
+{"text": "c'est quoi ton film préféré ?", "cats": {"rejet": 1.0}}
+{"text": "blabla incompréhensible", "cats": {"rejet": 1.0}}
+{"text": "kjhdfkjghdfkjgh", "cats": {"rejet": 1.0}}
+{"text": "123456789", "cats": {"rejet": 1.0}}
+{"text": "azertyuiop", "cats": {"rejet": 1.0}}
+{"text": "n'importe quoi", "cats": {"rejet": 1.0}}
+{"text": "sdf sdf sdf", "cats": {"rejet": 1.0}}
+{"text": ".....", "cats": {"rejet": 1.0}}
+{"text": "??????", "cats": {"rejet": 1.0}}
+{"text": "Faut poster ça pour moi", "cats": {"rejet": 1.0}}
+{"text": "mets en statut stp", "cats": {"rejet": 1.0}}

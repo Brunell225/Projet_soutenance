@@ -10,13 +10,12 @@ sys.path.append(BASE_DIR)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
 django.setup()
 
-
 from bot.models import BotMessageHistory
 
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "train_auto.json")
 
 def export_clean_messages(min_confidence=0.8):
-    print("🔍 Extraction des messages bien compris...")
+    print(" Extraction des messages bien compris...")
 
     data = []
     qs = BotMessageHistory.objects.filter(
@@ -24,7 +23,12 @@ def export_clean_messages(min_confidence=0.8):
         detected_intent__isnull=False
     ).exclude(detected_intent="")
 
+    seen = set()
     for h in qs:
+        msg = h.client_message.lower().strip()
+        if msg in seen:
+            continue
+        seen.add(msg)
         data.append({
             "text": h.client_message,
             "intent": h.detected_intent

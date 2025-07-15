@@ -1,0 +1,26 @@
+{
+  "labels":[
+    "salutation",
+    "remerciement",
+    "commande",
+    "produit",
+    "livraison",
+    "retour",
+    "probl\u00e8me",
+    "horaire",
+    "paiement",
+    "rejet",
+    "annulation",
+    "urgent",
+    "produit_absent",
+    "avis",
+    "erreur_commande",
+    "chaussures",
+    "sacs",
+    "montres",
+    "bijoux",
+    "v\u00eatements_enfants"
+  ],
+  "threshold":0.0,
+  "positive_label":null
+}

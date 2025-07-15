@@ -1,0 +1,248 @@
+Text,True_Label,Predicted_Label
+bonjour,salutation,salutation
+salut,salutation,salutation
+coucou,salutation,salutation
+bonsoir,salutation,salutation
+yo,salutation,salutation
+hey,salutation,salutation
+bienvenue,salutation,salutation
+allo,salutation,salutation
+hello,salutation,salutation
+salutations,salutation,salutation
+cc,salutation,salutation
+bjr,salutation,salutation
+bon matin,salutation,salutation
+bon après-midi,salutation,salutation
+je te salue,salutation,salutation
+bonjour à tous,salutation,salutation
+hello le service,salutation,salutation
+salut les amis,salutation,salutation
+salut la team,salutation,salutation
+bonjour à vous,salutation,salutation
+merci,remerciement,remerciement
+merci beaucoup,remerciement,remerciement
+merci infiniment,remerciement,remerciement
+super travail,remerciement,remerciement
+cool merci,remerciement,remerciement
+vous êtes au top,remerciement,remerciement
+je vous remercie,remerciement,remerciement
+gentil de votre part,remerciement,remerciement
+sympa,remerciement,remerciement
+trop gentil,remerciement,remerciement
+parfait merci,remerciement,remerciement
+génial merci,remerciement,remerciement
+top comme service,remerciement,remerciement
+chouette,remerciement,remerciement
+nickel,remerciement,remerciement
+bravo,remerciement,remerciement
+félicitations,remerciement,remerciement
+merci à vous,remerciement,remerciement
+thanks,remerciement,remerciement
+gratitude,remerciement,remerciement
+je veux commander,commande,commande
+comment passer une commande,commande,commande
+je souhaite acheter,commande,commande
+je voudrais un panier,commande,commande
+je veux ce produit,commande,commande
+peux-tu me le réserver,commande,commande
+je finalise ma commande,commande,commande
+je veux payer,commande,paiement
+envoyez-moi la facture,commande,commande
+je passe la commande maintenant,commande,commande
+comment acheter,commande,commande
+dispo pour commander,commande,commande
+je clique où pour acheter,commande,commande
+je choisis cet article,commande,commande
+j’achète,commande,commande
+c’est bon je prends,commande,commande
+je confirme la commande,commande,commande
+je veux en commander 2,commande,commande
+commande confirmée,commande,commande
+je veux réserver,commande,commande
+je passe commande,commande,commande
+acheter maintenant,commande,commande
+procéder au paiement,commande,commande
+valider mon panier,commande,commande
+quels produits avez-vous,produit,produit
+montre-moi les articles,produit,produit
+as-tu des chaussures,produit,produit
+je cherche une robe,produit,produit
+vous avez des vêtements,produit,produit
+des jeans en stock ?,produit,produit
+affichez les t-shirts,produit,produit
+avez-vous des baskets,produit,produit
+je veux voir les accessoires,produit,produit
+proposez-moi des sacs,produit,produit
+vous avez du S en taille ?,produit,produit
+vous avez du neuf ?,produit,produit
+je veux des nouveautés,produit,produit
+vos meilleurs articles ?,produit,produit
+produits femmes ?,produit,produit
+des habits hommes ?,produit,produit
+tenues pour enfants ?,produit,produit
+quels modèles disponibles ?,produit,produit
+je veux un article tendance,produit,produit
+produit en promotion ?,produit,produit
+comment se passe la livraison,livraison,livraison
+livrez-vous à domicile ?,livraison,livraison
+vous livrez à Abidjan ?,livraison,livraison
+quel est le délai de livraison,livraison,livraison
+le colis arrive quand ?,livraison,livraison
+est-ce que je peux suivre mon colis,livraison,livraison
+j’attends ma livraison,livraison,livraison
+toujours pas reçu,livraison,livraison
+est-ce livré aujourd’hui ?,livraison,livraison
+en combien de temps ?,livraison,livraison
+vous expédiez dans tout le pays ?,livraison,livraison
+vous livrez à l’international ?,livraison,livraison
+je veux une livraison rapide,livraison,livraison
+peut-on choisir l’horaire ?,livraison,livraison
+frais de livraison ?,livraison,livraison
+livraison offerte ?,livraison,livraison
+suivi du colis svp,livraison,livraison
+où est mon colis,livraison,livraison
+retard de livraison,livraison,livraison
+colis perdu ?,livraison,livraison
+livraison express ?,livraison,livraison
+frais de port,livraison,livraison
+délai de livraison,livraison,livraison
+gratuité livraison,livraison,livraison
+où est mon colis ?,livraison,livraison
+comment retourner un article,retour,retour
+je veux un remboursement,retour,retour
+je veux échanger le produit,retour,retour
+je ne suis pas satisfait,retour,retour
+article non conforme,retour,retour
+je veux annuler ma commande,retour,retour
+le produit ne me va pas,retour,retour
+j’ai changé d’avis,retour,retour
+puis-je faire un retour,retour,retour
+c’est possible d’échanger ?,retour,retour
+je veux un avoir,retour,retour
+vous acceptez les retours ?,retour,retour
+j’ai reçu le mauvais produit,retour,retour
+remboursement possible ?,retour,retour
+retour gratuit ?,retour,retour
+conditions de retour ?,retour,retour
+je fais une réclamation,retour,retour
+produit abîmé,retour,retour
+je renvoie l’article,retour,retour
+échange sous combien de jours ?,retour,retour
+je déteste ce produit,retour,retour
+article défectueux,retour,retour
+mauvais achat,retour,retour
+insatisfait,retour,retour
+j’ai un souci,problème,problème
+problème avec ma commande,problème,problème
+bug sur le site,problème,problème
+je n’arrive pas à payer,problème,problème
+le lien ne fonctionne pas,problème,problème
+erreur lors de l’achat,problème,problème
+ça ne marche pas,problème,problème
+je suis bloqué,problème,problème
+j’ai reçu un message d’erreur,problème,problème
+rien ne s’affiche,problème,problème
+je ne comprends pas,problème,problème
+je veux parler au support,problème,problème
+ça plante tout le temps,problème,problème
+l’application ne répond pas,problème,problème
+c’est lent,problème,problème
+mon panier est vide,problème,problème
+le code promo ne marche pas,problème,problème
+je ne vois pas mon produit,problème,problème
+vous avez un bug,problème,problème
+service indisponible,problème,problème
+vous ouvrez à quelle heure,horaire,horaire
+quand êtes-vous disponibles,horaire,horaire
+vos horaires svp,horaire,horaire
+êtes-vous ouverts dimanche ?,horaire,horaire
+vous fermez à quelle heure,horaire,horaire
+je veux connaître vos heures,horaire,horaire
+vous êtes disponibles maintenant ?,horaire,horaire
+je peux commander ce soir ?,horaire,horaire
+je peux appeler demain ?,horaire,horaire
+vos jours d’ouverture,horaire,horaire
+vous êtes fermés ?,horaire,horaire
+quand vous travaillez ?,horaire,horaire
+heures d’ouverture svp,horaire,horaire
+vous êtes en ligne ?,horaire,horaire
+vous travaillez le week-end ?,horaire,horaire
+je peux vous contacter maintenant ?,horaire,horaire
+je peux passer en magasin ?,horaire,horaire
+heure limite de commande ?,horaire,horaire
+service actif à midi ?,horaire,horaire
+vous bossez le samedi ?,horaire,horaire
+salut les horaires,horaire,horaire
+coucou vous ouvrez quand,horaire,horaire
+bjr c'est quoi vos heures,horaire,horaire
+comment puis-je payer,paiement,paiement
+quels moyens de paiement,paiement,paiement
+vous acceptez Orange Money ?,paiement,paiement
+paiement par carte ?,paiement,paiement
+je paie comment,paiement,paiement
+vous prenez le cash ?,paiement,paiement
+possible de payer à la livraison ?,paiement,paiement
+vous avez PayPal ?,paiement,paiement
+je veux payer en ligne,paiement,paiement
+paiement sécurisé ?,paiement,paiement
+le site est fiable ?,paiement,paiement
+je veux faire un virement,paiement,paiement
+vous avez Wave ?,paiement,paiement
+comment faire le paiement,paiement,paiement
+je règle par Moov Money,paiement,paiement
+j’ai payé mais rien reçu,paiement,paiement
+je veux payer en plusieurs fois,paiement,paiement
+je paie comment avec mobile money,paiement,paiement
+les frais de paiement ?,paiement,paiement
+je vous fais un versement,paiement,paiement
+bonjour je veux payer,paiement,paiement
+salut comment payer,paiement,paiement
+coucou pour régler,paiement,paiement
+non,rejet,rejet
+rien,rejet,rejet
+en rien,rejet,rejet
+pas besoin,rejet,rejet
+je regarde seulement,rejet,rejet
+pas maintenant,rejet,rejet
+plus tard,rejet,rejet
+merci mais non,rejet,rejet
+c’est bon,rejet,rejet
+je veux rien,rejet,rejet
+je n’ai pas besoin d’aide,rejet,rejet
+pas intéressé,rejet,rejet
+je fais juste un tour,rejet,rejet
+je regarde pour l’instant,rejet,rejet
+ça ira,rejet,rejet
+je veux juste voir,rejet,rejet
+laisse tomber,rejet,rejet
+aucun souci,rejet,rejet
+je gère,rejet,rejet
+je me débrouille,rejet,rejet
+merci mais ça ira,rejet,rejet
+pas tout de suite,rejet,rejet
+je vais réfléchir,rejet,rejet
+ce n’est pas urgent,rejet,rejet
+je reviendrai plus tard,rejet,rejet
+je ne veux rien pour l’instant,rejet,rejet
+j’ai changé d’avis,rejet,retour
+ce n’est plus nécessaire,rejet,rejet
+je ne veux pas discuter,rejet,rejet
+je veux arrêter,rejet,rejet
+laisse-moi tranquille,rejet,rejet
+on se reparle plus tard,rejet,rejet
+quel temps fait-il,rejet,rejet
+raconte une blague,rejet,rejet
+qui a gagné le match ?,rejet,rejet
+quelle est ta couleur préférée ?,rejet,rejet
+parle-moi de toi,rejet,rejet
+que fais-tu ce weekend ?,rejet,rejet
+comment vas-tu ?,rejet,rejet
+c'est quoi ton film préféré ?,rejet,rejet
+blabla incompréhensible,rejet,rejet
+kjhdfkjghdfkjgh,rejet,rejet
+123456789,rejet,rejet
+azertyuiop,rejet,rejet
+n'importe quoi,rejet,rejet
+sdf sdf sdf,rejet,rejet
+.....,rejet,rejet
+??????,rejet,rejet

@@ -25,6 +25,8 @@ class User(AbstractUser):
 
     # Rôle spécifique à la plateforme
     is_platform_admin = models.BooleanField(default=False)
+    bot_enabled = models.BooleanField(default=True, help_text="Activer ou désactiver le bot pour ce vendeur")
+
 
     def __str__(self):
         return f"{self.company_name} ({self.whatsapp_number})"

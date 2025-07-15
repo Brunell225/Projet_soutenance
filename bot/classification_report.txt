@@ -1,0 +1,16 @@
+              precision    recall  f1-score   support
+
+    commande       1.00      0.96      0.98        24
+     horaire       1.00      1.00      1.00        23
+   livraison       1.00      1.00      1.00        25
+    paiement       0.96      1.00      0.98        23
+    problème       1.00      1.00      1.00        20
+     produit       1.00      1.00      1.00        20
+       rejet       1.00      0.98      0.99        48
+remerciement       1.00      1.00      1.00        20
+      retour       0.96      1.00      0.98        24
+  salutation       1.00      1.00      1.00        20
+
+    accuracy                           0.99       247
+   macro avg       0.99      0.99      0.99       247
+weighted avg       0.99      0.99      0.99       247

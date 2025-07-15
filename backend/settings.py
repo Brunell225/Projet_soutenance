@@ -3,29 +3,28 @@ from pathlib import Path
 import sys
 from datetime import timedelta
 from dotenv import load_dotenv
+
 load_dotenv()
 
-# Détection environnement Railway
-USE_PRODUCTION_DB = os.environ.get("USE_PRODUCTION_DB", "").lower() in ["1", "true", "yes"]
-DATABASE_URL = os.environ.get("DATABASE_URL")
-
-# Base dir
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Clé secrète
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-59xg396)ocz*e_sr*1133)wgdq-u_kr0n&wmc5f1y!(*^+-tbc")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
 
-# Debug (désactive en prod)
-DEBUG = True
+# Debug
+DEBUG = os.getenv("DÉBOGUER", "False").lower() in ["true", "1", "yes"]
 
 # Hôtes autorisés
-ALLOWED_HOSTS = [
-    "localhost", "127.0.0.1", "192.168.0.137", "192.168.2.114",
-    "saas-whatsapp-backend-production.up.railway.app"
+ALLOWED_HOSTS = os.getenv("HÔTES_AUTORISÉS", "*").split(",")
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    f"https://{os.getenv('RAILWAY_STATIC_DOMAIN')}",  # optionnel si Railway te génère un domaine
 ]
 
-# Apps installées
+# Application installée
 INSTALLED_APPS = [
+    'jazzmin',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,7 +39,7 @@ INSTALLED_APPS = [
     "corsheaders",
 ]
 
-# Middlewares
+# Middleware
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -55,7 +54,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "backend.urls"
 
-# Templates
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -73,28 +71,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
-# Base de données
-if USE_PRODUCTION_DB and DATABASE_URL:
-    import dj_database_url
-    DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+# Base de données Railway
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("DB_NAME"),
+        "USER": os.getenv("DB_USER"),
+        "PASSWORD": os.getenv("DB_PASSWORD"),
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT", "5432"),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'nom_local',
-            'USER': 'utilisateur_local',
-            'PASSWORD': 'mot_de_passe_local',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
+}
 
-# Auth user
 AUTH_USER_MODEL = 'accounts.User'
 
-# REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -110,22 +100,18 @@ SIMPLE_JWT = {
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
 
-# Internationalisation
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# Fichiers statiques & médias
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Clé primaire auto
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Swagger
 SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': False,
     'SECURITY_DEFINITIONS': {
@@ -137,19 +123,16 @@ SWAGGER_SETTINGS = {
     },
 }
 
-# Whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Sécurité (à adapter si prod)
-SECURE_BROWSER_XSS_FILTER = False
-SECURE_CONTENT_TYPE_NOSNIFF = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_SSL_REDIRECT = False
-SECURE_HSTS_SECONDS = 0
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_HSTS_PRELOAD = False
-
+SECURE_SSL_REDIRECT = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+SECURE_HSTS_SECONDS = 3600 if not DEBUG else 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = not DEBUG
+SECURE_HSTS_PRELOAD = not DEBUG
+SECURE_CONTENT_TYPE_NOSNIFF = not DEBUG
+SECURE_BROWSER_XSS_FILTER = not DEBUG
 
 LOGGING = {
     "version": 1,
@@ -161,6 +144,47 @@ LOGGING = {
     },
     "root": {
         "handlers": ["console"],
-        "level": "DEBUG",
+        "level": "DEBUG" if DEBUG else "INFO",
     },
 }
+
+JAZZMIN_SETTINGS = {
+    "site_title": "BOT Admin",
+    "site_header": "Gestion des Vendeurs",
+    "site_brand": "BOT",
+    "site_logo": "img/logo.png",
+    "welcome_sign": "Bienvenue dans le système BOT",
+    "site_icon": "/static/img/logo.png",
+    "copyright": "BOT WHA",
+    "search_model": "bot.Product",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "solar",
+    "dark_mode_theme": "darkly",
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "accent": "accent-warning",
+    "navbar": "navbar-light navbar-white",
+    "no_navbar_border": True,
+    "sidebar": "sidebar-light-warning",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": True,
+    "theme_color": "blue",
+    "primary_color": "#37a0b3",
+}
+
+DEFAULT_FROM_EMAIL = 'bot@tondomaine.com'
+SUPPORT_EMAIL = 'support@tondomaine.com'
+
+TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID", "")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN", "")
+TWILIO_WHATSAPP_NUMBER = os.getenv("TWILIO_WHATSAPP_NUMBER", "")
+ESCALATION_WHATSAPP_NUMBER = os.getenv("ESCALATION_WHATSAPP_NUMBER", "")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")

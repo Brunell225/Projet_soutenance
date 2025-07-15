@@ -1,31 +1,72 @@
 {
-    "salutation": [
-      "bonjour", "salut", "coucou", "bonsoir", "yo", "hey", "bienvenue", "hello", "allo", "salutations"
-    ],
-    "remerciement": [
-      "merci", "super", "cool", "gentil", "sympa", "parfait", "génial", "top", "chouette", "nickel", "bravo", "félicitations"
-    ],
-    "commande": [
-      "commander", "acheter", "prix", "payer", "panier", "facture", "commande", "réserver", "réservation", "payer"
-    ],
-    "produit": [
-      "produit", "article", "chaussure", "robe", "tenue", "vêtement", "jean", "t-shirt", "bikini", "maillot",
-      "maillot de bain", "lunette", "lunette pharmaceutique", "chemise", "chapeau", "pantalon", "sac", "accessoire", "casquette", "baskets"
-    ],
-    "livraison": [
-      "livrer", "livraison", "colis", "expédition", "délai", "retard", "suivi", "transport", "réception", "recevoir"
-    ],
-    "retour": [
-      "retour", "rembourser", "échanger", "annuler", "réclamation", "retourner", "échange"
-    ],
-    "problème": [
-      "bug", "erreur", "problème", "souci", "incident", "blocage", "impossible", "dysfonctionnement", "ne fonctionne pas"
-    ],
-    "horaire": [
-      "horaire", "heure", "ouvert", "fermé", "fermeture", "disponibilité", "heures d’ouverture", "quand", "moment"
-    ],
-    "paiement": [
-      "paiement", "moyen", "carte", "mobile money", "paypal", "orange money", "visa", "espèces", "versement"
-    ]
-  }
+  "salutation": [
+    "bonjour", "salut", "coucou", "bonsoir", "yo", "bienvenue", "allo", "salutations", "cc",
+    "ça va", "sava", "akwaba", "bjr", "bsr", "salut famille", "bonjour chef", "bonsoir chef"
+  ],
+  "remerciement": [
+    "merci", "super", "cool", "gentil", "sympa", "parfait", "génial", "top", "chouette", "nickel",
+    "merci beaucoup", "grâce", "abondance", "amour", "bénédiction", "chapeau", "respect", "même", "cimer", "à Dieu", "zoooo"
+  ],
+  "commande": [
+    "commander", "acheter", "prix", "payer", "panier", "facture", "commande", "réserver", "réservation",
+    "achat", "caisse", "total", "quantité", "valider", "bon", "ticket", "article", "soumettre", "enregistrer"
+  ],
+  "produit": [
+    "produit", "article", "chaussure", "robe", "tenue", "vêtement", "jean", "t-shirt", "pagne", "wax",
+    "lunettes", "chemise", "kaki", "pantalon", "sac", "accessoire", "parfum", "cosmétique", "bijou", "perruque",
+    "tissu", "boubou", "chapeau", "sandale", "soutien-gorge", "slip", "montre", "ceinture", "collier", "bague"
+  ],
+  "livraison": [
+    "livrer", "livraison", "colis", "expédition", "délai", "retard", "suivi", "transport", "réception",
+    "adresse", "destinataire", "livreur", "motard", "course", "rapide", "express", "dépôt", "retrait", "point relais"
+  ],
+  "retour": [
+    "retour", "rembourser", "échanger", "annuler", "réclamation", "retourner", "échange", "défaut", "casse",
+    "problème", "défectueux", "garantie", "rétractation", "reprise", "recup", "plainte", "insatisfaction", "non conforme"
+  ],
+  "problème": [
+    "bug", "erreur", "problème", "souci", "incident", "blocage", "impossible", "dysfonctionnement",
+    "plantage", "anomalie", "défaillance", "buggé", "ko", "hs", "marche pas", "connexion", "lent", "figé"
+  ],
+  "horaire": [
+    "horaire", "heure", "ouvert", "fermé", "fermeture", "disponibilité", "heures d’ouverture",
+    "matin", "soir", "midi", "nuit", "jour", "nuit", "pause", "week-end", "férié", "dimanche", "lundi"
+  ],
+  "paiement": [
+    "paiement", "carte", "mobile money", "orange money", "mtn money", "wave", "visa", "espèces",
+    "virement", "cb", "mastercard", "versement", "cash", "chèque", "preuve", "facture", "terminal", "qr code", "pos"
+  ],
+  "rejet": [
+    "non", "rien", "pas besoin", "plus tard", "c'est bon", "je ne veux plus", "stop",
+    "laisse", "terminé", "fini", "assez", "abandon", "annule", "retour", "quitter", "sortir", "fermer", "bouai"
+  ],
+  "confirmation": [
+    "oui", "d'accord", "ok", "parfait", "confirmé", "exact", "c'est ça", "valide", "accepté",
+    "correct", "entendu", "approuvé", "validé", "certifié", "convenu", "reçu", "compris", "noté"
+  ],
+  "localisation": [
+    "où", "adresse", "localiser", "trouver", "magasin", "boutique", "position", "lieu", "situé",
+    "abidjan", "yopougon", "cocody", "plateau", "marcory", "treichville", "angle", "rue", "avenue", "quartier"
+  ],
+  "contact": [
+    "contact", "joindre", "appeler", "téléphone", "mail", "email", "support", "aide", "service client",
+    "whatsapp", "facebook", "instagram", "réseaux", "sms", "appel", "message", "urgence", "direct", "assistance"
+  ],
+  "promotion": [
+    "réduction", "promo", "solde", "remise", "code promo", "bon plan", "offre", "rabais", "économiser",
+    "vente", "déstockage", "occasion", "spécial", "prix", "moins cher", "affaire", "bonus", "cadeau", "réduit"
+  ],
+  "qualité": [
+    "qualité", "matière", "durable", "résistant", "fabriqué", "composition", "origine", "marque", "certifié",
+    "vrai", "authentique", "original", "copie", "contrefaçon", "solide", "finition", "texture", "coton", "cuir"
+  ],
+  "taille": [
+    "taille", "grandeur", "petit", "medium", "large", "XL", "XXL", "S", "M", "L",
+    "enfant", "adulte", "homme", "femme", " ajusté", "ample", "serré", "largeur", "longueur", "tour"
+  ],
+  "couleur": [
+    "couleur", "teinte", "noir", "blanc", "rouge", "bleu", "vert", "jaune", "rose", "gris",
+    "vif", "foncé", "clair", "multicolore", "uni", "imprimé", "fluo", "pastel", "doré", "argenté"
+  ]
   
+}

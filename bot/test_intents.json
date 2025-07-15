@@ -1,0 +1,122 @@
+{
+  "salutation": [
+    "salut à toi",
+    "bien le bonjour",
+    "yo l'équipe",
+    "cc les amis",
+    "bon matin à tous",
+    "coucou le service",
+    "hello à tous",
+    "bonjour vous allez bien ?",
+    "salutations cordiales",
+    "hey hey"
+  ],
+  "remerciement": [
+    "merci pour tout",
+    "je suis reconnaissant",
+    "vous êtes adorables",
+    "super efficace merci",
+    "merci c’est parfait",
+    "franchement merci",
+    "je vous félicite",
+    "vous êtes formidables",
+    "merci à toute l’équipe",
+    "merci de votre aide"
+  ],
+  "commande": [
+    "je souhaite acheter ceci",
+    "je vais commander maintenant",
+    "je confirme la commande",
+    "je passe ma commande",
+    "c’est bon pour moi",
+    "je commande cet article",
+    "je vais l’acheter",
+    "prenez ma commande svp",
+    "je passe au paiement",
+    "je veux faire une commande"
+  ],
+  "produit": [
+    "vous avez ce modèle ?",
+    "je veux un sac noir",
+    "je cherche un accessoire",
+    "des montres disponibles ?",
+    "vous avez des nouveautés ?",
+    "montrez-moi vos produits",
+    "catalogue des robes ?",
+    "t-shirts pour hommes ?",
+    "articles en solde ?",
+    "vous avez une collection été ?"
+  ],
+  "livraison": [
+    "c’est livré sous combien de jours ?",
+    "vous expédiez à l’international ?",
+    "où est mon colis svp ?",
+    "colis encore en route ?",
+    "j’attends toujours mon colis",
+    "suivi colis dispo ?",
+    "la livraison est-elle rapide ?",
+    "quand vais-je être livré ?",
+    "y a-t-il des frais de port ?",
+    "je veux changer mon adresse de livraison"
+  ],
+  "retour": [
+    "je souhaite renvoyer un article",
+    "remboursement accepté ?",
+    "je n’aime pas le produit",
+    "produit reçu cassé",
+    "je veux l’échanger",
+    "je suis déçu par l’article",
+    "je demande un retour",
+    "j’ai reçu un mauvais produit",
+    "remboursez-moi",
+    "je fais une réclamation"
+  ],
+  "problème": [
+    "le bouton ne marche pas",
+    "erreur sur la page",
+    "site trop lent",
+    "je n’ai pas accès",
+    "je ne comprends pas le message",
+    "ça bug chez moi",
+    "je vois rien",
+    "je suis bloqué à l’étape paiement",
+    "le site est en panne ?",
+    "le panier est vide"
+  ],
+  "horaire": [
+    "vous ouvrez samedi ?",
+    "je peux venir à 17h ?",
+    "vous travaillez aujourd’hui ?",
+    "vos jours d’activité ?",
+    "c’est ouvert ce week-end ?",
+    "je veux vos heures d’ouverture",
+    "je peux appeler ce soir ?",
+    "vous êtes dispo à 14h ?",
+    "service ouvert à midi ?",
+    "vous fermez à quelle heure ?"
+  ],
+  "paiement": [
+    "comment payer via Orange Money ?",
+    "paiement possible par carte bleue ?",
+    "je paie par Moov Money",
+    "le paiement est sécurisé ?",
+    "paiement à la réception ?",
+    "je veux payer en ligne",
+    "vous acceptez Wave ?",
+    "je veux faire un virement bancaire",
+    "paiement partiel possible ?",
+    "quels moyens de paiement avez-vous ?"
+  ],
+  "rejet": [
+    "non merci",
+    "je regarde pour le moment",
+    "rien de spécial",
+    "pas intéressé actuellement",
+    "je ne veux rien",
+    "je fais juste un tour",
+    "pas besoin d’aide",
+    "ce n’est pas urgent",
+    "je passe plus tard",
+    "laisse tomber pour aujourd’hui"
+  ]
+}

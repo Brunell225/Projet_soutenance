@@ -1,0 +1,185 @@
+{
+  "salutation": [
+    "bonjour", "salut", "coucou", "bonsoir", "yo", "hey", "bienvenue", "allo", "hello", "salutations",
+    "cc", "bjr", "bon matin", "bon après-midi", "je te salue", "bonjour à tous", "hello le service",
+    "salut les amis", "salut la team", "bonjour à vous", "comment tu vas", "comment vas tu", "bsr",
+    "sdq", "yo boss", "yo famille", "akoué", "akouaba", "grr ça va là-bas", "wesh wesh", "ça dit quoi", 
+    "yoo la famille", "bonjour chef", "yo tonton", "salut tt le monde", "bonjour les gars", "bonjour mon frère",  "yow boss", "yo poto", "wesh la famille", "bon réveil", "hello team",
+  "yo service client", "allo là", "bien ou bien ?", "force à vous", "bonjour les boss"
+  ],
+  "remerciement": [
+    "merci", "merci beaucoup", "merci infiniment", "super travail", "cool merci", "vous êtes au top",
+    "je vous remercie", "gentil de votre part", "sympa", "trop gentil", "parfait merci", "génial merci",
+    "top comme service", "chouette", "nickel", "bravo", "félicitations", "merci à vous", "thanks",
+    "gratitude", "ta xiencé", "zoooo", "anitché", "vous êtes formidables", "je suis content", "franchement merci",
+    "merci infiniment pour tout", "vous êtes rapides", "merci c'est clair", "merci le boss", "merci chef",
+    "je vous kiffe", "merci bcp", "grand merci", "merci de m’avoir répondu", "merci du fond du cœur"
+  ],
+  "commande": [
+    "je veux commander", "comment passer une commande", "je souhaite acheter", "je voudrais un panier",
+    "je veux ce produit", "peux-tu me le réserver", "je finalise ma commande", "je veux payer",
+    "envoyez-moi la facture", "je passe la commande maintenant", "comment acheter", "dispo pour commander",
+    "je clique où pour acheter", "je choisis cet article", "j’achète", "c’est bon je prends",
+    "je confirme la commande", "je veux en commander 2", "commande confirmée", "je veux réserver",
+    "je passe commande", "acheter maintenant", "procéder au paiement", "valider mon panier", "je veux ça",
+    "faut garder ça pour moi", "je confirme l’achat", "j’ai pris", "j’achète tout de suite",
+    "je valide ça", "c’est bon c’est payé", "je valide le panier", "ok pour commander", "je fonce",
+    "prends note de ma commande", "mets ça pour moi", "je prends", "je le veux", "je passe à l’action", "je prends celui-là", "note ma commande", "mets ça de côté", 
+  "réserve ça pour moi", "je paie tout à l'heure", "je veux prendre ça direct", 
+  "je le veux maintenant", "je confirme ma sélection", "ce produit est pour moi"
+  ],
+  "produit": [
+    "quels produits avez-vous", "montre-moi les articles", "as-tu des chaussures", "je cherche une robe",
+    "vous avez des vêtements", "des jeans en stock ?", "affichez les t-shirts", "avez-vous des baskets",
+    "je veux voir les accessoires", "proposez-moi des sacs", "vous avez du S en taille ?",
+    "vous avez du neuf ?", "je veux des nouveautés", "vos meilleurs articles ?", "produits femmes ?",
+    "des habits hommes ?", "tenues pour enfants ?", "quels modèles disponibles ?",
+    "je veux un article tendance", "produit en promotion ?", "tu as taille s", "tu as taille l",
+    "tu as taille m", "tu as taille xl", "envoie moi les photos", "qu'est ce qui est disponible ?",
+    "C'est quoi qui disponible", "c'est quoi qui est là", "montre-moi les robes", "je veux une paire de baskets",
+    "vous avez des sacs pour femme ?", "tu vends quoi ?", "je cherche un t-shirt noir", "je veux une montre",
+    "des nouveautés ?", "tu as quoi en stock ?", "tu peux me montrer ce que tu as ?", 
+  "dispo quoi là ?", "je veux voir les modèles", "envoie les visuels", 
+  "y a quoi comme nouveauté ?", "c’est quoi les articles du moment ?", 
+  "montre les nouveautés", "produits dispo ?", "je veux une sélection"
+
+  ],
+  "livraison": [
+    "comment se passe la livraison", "livrez-vous à domicile ?", "vous livrez à Abidjan ?",
+    "quel est le délai de livraison", "le colis arrive quand ?", "est-ce que je peux suivre mon colis",
+    "j’attends ma livraison", "toujours pas reçu", "est-ce livré aujourd’hui ?", "en combien de temps ?",
+    "vous expédiez dans tout le pays ?", "vous livrez à l’international ?", "je veux une livraison rapide",
+    "peut-on choisir l’horaire ?", "frais de livraison ?", "livraison offerte ?", "suivi du colis svp",
+    "où est mon colis", "retard de livraison", "colis perdu ?", "livraison express ?", "frais de port",
+    "délai de livraison", "gratuité livraison", "où est mon colis ?", "livreur en route ?", "je suis livré quand ?",
+    "j’attends le motard", "colis en route ?", "livrez-vous à Yop ?", "on peut livrer à la maison ?"
+  ],
+  "retour": [
+    "comment retourner un article", "je veux un remboursement", "je veux échanger le produit",
+    "je ne suis pas satisfait", "article non conforme", "je veux annuler ma commande", "le produit ne me va pas",
+    "j’ai changé d’avis", "puis-je faire un retour", "c’est possible d’échanger ?", "je veux un avoir",
+    "vous acceptez les retours ?", "j’ai reçu le mauvais produit", "remboursement possible ?", "retour gratuit ?",
+    "conditions de retour ?", "je fais une réclamation", "produit abîmé", "je renvoie l’article",
+    "échange sous combien de jours ?", "je déteste ce produit", "article défectueux", "mauvais achat",
+    "insatisfait", "vous remboursez ?", "on peut changer ?", "j’ai reçu un truc cassé", "produit endommagé",
+    "remplacer le produit", "je n’aime pas", "je veux pas ça"
+  ],
+  "problème": [
+    "j’ai un souci", "problème avec ma commande", "bug sur le site", "je n’arrive pas à payer",
+    "le lien ne fonctionne pas", "erreur lors de l’achat", "ça ne marche pas", "je suis bloqué",
+    "j’ai reçu un message d’erreur", "rien ne s’affiche", "je ne comprends pas", "je veux parler au support",
+    "ça plante tout le temps", "c’est lent", "mon panier est vide", "le code promo ne marche pas",
+    "je ne vois pas mon produit", "vous avez un bug", "service indisponible", "je suis coincé",
+    "je ne vois rien", "je suis perdu", "ça bloque ici", "j’ai une erreur", "site trop lent",
+    "le site bug", "ça plante tout seul", "impossible de valider", 
+  "j’ai une galère", "ça bloque ici", "je n’arrive pas à faire le paiement",
+  "je clique mais rien", "tout est lent", "l’appli répond pas", "je vois rien"
+  ],
+  "horaire": [
+    "vous ouvrez à quelle heure", "quand êtes-vous disponibles", "vos horaires svp",
+    "êtes-vous ouverts dimanche ?", "vous fermez à quelle heure", "je veux connaître vos heures",
+    "vous êtes disponibles maintenant ?", "je peux commander ce soir ?", "je peux appeler demain ?",
+    "vos jours d’ouverture", "vous êtes fermés ?", "quand vous travaillez ?", "heures d’ouverture svp",
+    "vous êtes en ligne ?", "vous travaillez le week-end ?", "je peux vous contacter maintenant ?",
+    "je peux passer en magasin ?", "heure limite de commande ?", "service actif à midi ?",
+    "vous bossez le samedi ?", "salut les horaires", "coucou vous ouvrez quand", "bjr c'est quoi vos heures",
+    "tu es là jusqu'à quelle heure", "heures d’appel", "c’est ouvert maintenant ?", "vous ouvrez samedi ?"
+  ],
+  "paiement": [
+    "comment puis-je payer", "quels moyens de paiement", "vous acceptez Orange Money ?",
+    "paiement par carte ?", "je paie comment", "vous prenez le cash ?", "possible de payer à la livraison ?",
+    "vous avez PayPal ?", "je veux payer en ligne", "paiement sécurisé ?", "le site est fiable ?",
+    "je veux faire un virement", "vous avez Wave ?", "comment faire le paiement", "je règle par Moov Money",
+    "j’ai payé mais rien reçu", "je veux payer en plusieurs fois", "je paie comment avec mobile money",
+    "les frais de paiement ?", "je vous fais un versement", "bonjour je veux payer", "salut comment payer",
+    "coucou pour régler", "tu prends wave", "tu prends OM", "tu prends orange money", "tu prends moov money",
+    "tu prends MTN money", "paiement mobile possible ?", "faut payer où ?", "on paie avant ou après ?", "je paye comment frère ?", "où est le numéro OM ?", "tu m’envoies le lien de paiement ?", 
+  "balance le numéro pour payer", "tu prends Moov ?", "je veux payer par Wave", 
+  "paiement Orange ça marche ?", "je veux faire dépôt mobile", "numéro de paiement ?",
+  "tu acceptes le paiement mobile ?"
+  ],
+  "rejet": [
+    "non", "rien", "en rien", "pas besoin", "je regarde seulement", "pas maintenant", "plus tard",
+    "merci mais non", "c’est bon", "je veux rien", "je n’ai pas besoin d’aide", "pas intéressé",
+    "je fais juste un tour", "je regarde pour l’instant", "ça ira", "je veux juste voir",
+    "laisse tomber", "aucun souci", "je gère", "je me débrouille", "merci mais ça ira",
+    "pas tout de suite", "je vais réfléchir", "ce n’est pas urgent", "je reviendrai plus tard",
+    "je ne veux rien pour l’instant", "j’ai changé d’avis", "ce n’est plus nécessaire",
+    "je ne veux pas discuter", "je veux arrêter", "laisse-moi tranquille", "on se reparle plus tard",
+    "quel temps fait-il", "raconte une blague", "qui a gagné le match ?", "parle-moi de toi",
+    "n'importe quoi", "blabla incompréhensible", "sdf sdf sdf", "azerty", "je veux juste voir ton statut"
+  ],
+  
+  "annulation": [
+    "j'annule", "je veux annuler", "annule la commande", "stop la commande", 
+    "je change d'avis", "je veux pas", "je veux revenir en arrière", 
+    "j’ai fait une erreur", "je me suis trompé", "je veux tout annuler"
+  ],
+  "urgent": [
+    "c'est urgent", "urgence", "vite", "j’ai besoin tout de suite", 
+    "très urgent", "répondez-moi vite", "dépêchez-vous", 
+    "besoin immédiat", "urgence client", "urgent svp", "faut faire vite", "urgence là chef", "ça presse", "besoin rapide", 
+  "j’ai pas le temps", "traite mon cas d’abord", "en priorité stp", 
+  "c’est super urgent", "gagne du temps pour moi", "je suis pressé"
+  ],
+  "produit_absent": [
+    "je ne trouve pas", "produit indisponible", "c’est en rupture ?", 
+    "il est où ce produit ?", "je cherche sans succès", "ça n’apparaît pas", 
+    "je vois pas la robe", "c’est plus là ?", "vous avez retiré l’article ?", 
+    "plus dispo ?"
+  ],
+  "avis": [
+    "j’ai un avis", "je veux laisser un commentaire", "notez ce service", 
+    "je donne mon opinion", "c’est génial", "c’est nul", "je veux faire une remarque", 
+    "voici mon retour", "avis client", "feedback", "je veux donner mon avis", "j’ai un retour à faire", "voici mes impressions", 
+  "retour client ici", "mon opinion sur le service", "j’ai des remarques", 
+  "feedback utilisateur", "je veux évaluer", "service top", "c’est pas ouf"
+  ],
+  "erreur_commande": [
+    "commande pas bonne", "j’ai reçu un mauvais article", "erreur de commande", 
+    "j’ai pas commandé ça", "le produit n’est pas celui demandé", 
+    "c’est pas ce que j’ai choisi", "je veux signaler une erreur", 
+    "problème de commande", "commande incorrecte", "produit différent"
+  ],
+  "chaussures": [
+    "je veux des chaussures", "montre-moi des chaussures", "as-tu des baskets ?", 
+    "je cherche des sneakers", "chaussures en promo ?", "tu as des sandales ?", 
+    "chaussures pour homme", "je veux une paire de talons", "je cherche des tennis", 
+    "envoie des modèles de chaussures", "pointure 42 disponible ?"
+  ],
+  "sacs": [
+    "je veux un sac", "vous avez des sacs ?", "je cherche un sac à main", 
+    "tu as des sacs pour femmes ?", "envoie les modèles de sacs", 
+    "des sacs à dos ?", "sac pour le travail", "tu vends des sacs ?", 
+    "je veux voir les sacs en stock", "sacs tendance dispo ?"
+  ],
+  "montres": [
+    "tu as des montres ?", "je veux une montre", "montres disponibles ?", 
+    "je cherche une montre homme", "montre connectée ?", 
+    "as-tu des montres en promo ?", "envoie les photos des montres", 
+    "tu as des montres femme ?", "je veux une belle montre", "montre classe dispo ?"
+  ],
+  "bijoux": [
+    "je veux voir des bijoux", "tu as des colliers ?", "je cherche une bague", 
+    "bracelets disponibles ?", "bijoux en or ?", "montre-moi tes bijoux", 
+    "des boucles d’oreilles ?", "tu as des bijoux pour femmes ?", 
+    "bijou pour un cadeau ?", "je veux offrir un bijou"
+  ],
+  "vêtements_enfants": [
+    "tu as des habits pour enfants ?", "je veux des vêtements bébé", 
+    "vêtements garçons 5 ans", "robe pour fille ?", "habits enfants disponibles ?", 
+    "je cherche un ensemble pour bébé", "tu as des tailles 2 ans ?", 
+    "tenue pour petite fille ?", "costume enfant ?", "tu as des habits scolaires ?"
+  ],
+  "prix": [
+  "c'est combien ?", "ça coûte combien ?", "donne le prix", "prix de ça ?", 
+  "ça fait combien ?", "c'est à combien ?", "le montant c'est quoi ?", 
+  "je veux connaître le prix", "je dois prévoir combien ?", "c’est à quel prix ?",
+  "combien tu vends ça ?", "tarif stp", "le prix c’est combien ?",
+  "balance le prix", "ça coûte cher ?", "je peux avoir le prix ?",
+  "coût de ce produit ?", "je veux le prix exact", "je paye combien pour ça ?"
+]
+
+
+
+}

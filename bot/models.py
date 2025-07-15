@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.contrib.postgres.fields import ArrayField 
 from .nlp_utils import extract_keywords  # ✅ nécessaire
 
 class MessageTemplate(models.Model):
@@ -21,13 +22,21 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='products/')
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    stock = models.PositiveIntegerField(default=1)
     product_code = models.CharField(max_length=50, blank=True, null=True, unique=True)
     is_available = models.BooleanField(default=True)
+    payment_link = models.URLField(blank=True, null=True, help_text="Lien de paiement")
+    deposit_number = models.CharField(max_length=30, blank=True, null=True, help_text="Numéro de dépôt Mobile Money")
+
     tags = models.CharField(
         max_length=255,
         blank=True,
         help_text="Mots-clés liés au produit, séparés par des virgules"
     )
+
+    # ✅ Champs ajoutés
+    sizes = ArrayField(models.CharField(max_length=20), blank=True, default=list)
+    colors = ArrayField(models.CharField(max_length=20), blank=True, default=list)
 
     def save(self, *args, **kwargs):
         if not self.tags and self.description:
@@ -36,7 +45,7 @@ class Product(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.name} ({self.user.company_name})"
+        return f"{self.name} - {self.user.company_name}"
 
 
 class BotResponse(models.Model):
@@ -77,6 +86,7 @@ class BotSession(models.Model):
     last_question = models.TextField(blank=True, null=True)
     bot_actif = models.BooleanField(default=True)
     last_updated = models.DateTimeField(auto_now=True)
+    bot_silence_until = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return f"Session [{self.client_number}] - {'Actif' if self.bot_actif else 'Manuel'}"
@@ -86,3 +96,4 @@ class BotSession(models.Model):
             models.Index(fields=["client_number"]),
             models.Index(fields=["last_updated"]),
         ]
+
