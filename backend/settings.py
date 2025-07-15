@@ -14,10 +14,23 @@ if os.path.exists(BASE_DIR / ".env"):
 # Sécurité
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
 DEBUG = os.getenv("DEBUG", "False").lower() in ["true", "1", "yes"]
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "web-production-bc787.up.railway.app").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "projet-soutenance-pm21.onrender.com").split(",")
 
-# CORS
-CORS_ALLOW_ALL_ORIGINS = DEBUG
+CORS_ALLOWED_ORIGINS = [
+    "https://projet-soutenance-pm21.onrender.com",
+]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+CORS_ALLOW_CREDENTIALS = True
 
 # Applications
 INSTALLED_APPS = [
@@ -68,9 +81,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise Exception("❌ DATABASE_URL est manquant dans l'environnement !")
+
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
+        default=DATABASE_URL,
         conn_max_age=600,
         ssl_require=True
     )
@@ -123,7 +140,7 @@ SWAGGER_SETTINGS = {
 }
 
 # Sécurité production
-SECURE_SSL_REDIRECT = not DEBUG
+SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
 SECURE_HSTS_SECONDS = 3600 if not DEBUG else 0
@@ -181,12 +198,4 @@ JAZZMIN_UI_TWEAKS = {
     "primary_color": "#37a0b3",
 }
 
-# Email & WhatsApp
-DEFAULT_FROM_EMAIL = 'bot@tondomaine.com'
-SUPPORT_EMAIL = 'support@tondomaine.com'
-
-TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID", "")
-TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN", "")
-TWILIO_WHATSAPP_NUMBER = os.getenv("TWILIO_WHATSAPP_NUMBER", "")
-ESCALATION_WHATSAPP_NUMBER = os.getenv("ESCALATION_WHATSAPP_NUMBER", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
