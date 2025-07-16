@@ -1,3 +1,4 @@
+import logging
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
@@ -18,27 +19,33 @@ from .permissions import (
     IsVendeur
 )
 
+logger = logging.getLogger(__name__)  # ✅ Ajout du logger
+
 # ✅ Vue pour l’inscription avec access + refresh token
 class RegisterAPIView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
+        try:
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
 
-        user = serializer.instance
-        refresh = RefreshToken.for_user(user)
+            user = serializer.instance
+            refresh = RefreshToken.for_user(user)
 
-        return Response(
-            {
-                "user": serializer.data,
-                "access": str(refresh.access_token),
-                "refresh": str(refresh)
-            },
-            status=status.HTTP_201_CREATED
-        )
+            return Response(
+                {
+                    "user": serializer.data,
+                    "access": str(refresh.access_token),
+                    "refresh": str(refresh)
+                },
+                status=status.HTTP_201_CREATED
+            )
+        except Exception as e:
+            logger.exception("❌ Erreur pendant l'inscription")
+            return Response({"detail": "Erreur serveur"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # ✅ Vue mise à jour profil avec retour de "user"
 class UserUpdateAPIView(generics.RetrieveUpdateAPIView):
